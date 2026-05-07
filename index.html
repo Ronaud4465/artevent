@@ -772,7 +772,15 @@ footer{background:#0d1f0d;padding:56px 80px 28px;color:rgba(255,255,255,.6);}
           <div class="ochoix" id="cli-h-faces"><div class="op" data-v="1" onclick="pick('cli-h-faces',this,'1');recalcCli('h')">1 face</div><div class="op" data-v="2" onclick="pick('cli-h-faces',this,'2');recalcCli('h')">2 faces</div><div class="op on" data-v="3" onclick="pick('cli-h-faces',this,'3');recalcCli('h')">3 faces</div></div>
         </div>
         <div class="fg"><label>Etat</label>
-          <div class="ochoix" id="cli-h-etat"><div class="op on" data-v="reg" onclick="pick('cli-h-etat',this,'reg');recalcCli('h')">Entretien régulier</div><div class="op" data-v="dense" onclick="pick('cli-h-etat',this,'dense');recalcCli('h')">Large / dense (+10%)</div><div class="op" data-v="rabat" onclick="pick('cli-h-etat',this,'rabat');recalcCli('h')">Rabattage léger (+10%)</div><div class="op" data-v="rabat2" onclick="pick('cli-h-etat',this,'rabat2');recalcCli('h')">Rabattage important (+20%)</div></div>
+          <div class="ochoix" id="cli-h-etat"><div class="op on" data-v="reg" onclick="pick('cli-h-etat',this,'reg');recalcCli('h')">✂️ Entretien régulier</div>
+        <div class="fg"><label>Évacuation des déchets</label>
+          <div class="ochoix" id="cli-h-evac">
+            <div class="op on" data-v="non" onclick="pick('cli-h-evac',this,'non');recalcCli('h')">🚫 Sans évacuation</div>
+            <div class="op" data-v="oui_leg" onclick="pick('cli-h-evac',this,'oui_leg');recalcCli('h')">🌱 Évacuation légère (+2€/m)</div>
+            <div class="op" data-v="oui_moy" onclick="pick('cli-h-evac',this,'oui_moy');recalcCli('h')">🌿 Évacuation normale (+3.5€/m)</div>
+            <div class="op" data-v="oui_lrd" onclick="pick('cli-h-evac',this,'oui_lrd');recalcCli('h')">🪵 Évacuation lourde (+5€/m)</div>
+          </div>
+        </div><div class="op" data-v="irr" onclick="pick('cli-h-etat',this,'irr');recalcCli('h')">🌿 Haie irrégulière (+30%)</div><div class="op" data-v="rabat" onclick="pick('cli-h-etat',this,'rabat');recalcCli('h')">✂️ Rabattage léger (+60%)</div><div class="op" data-v="rabat2" onclick="pick('cli-h-etat',this,'rabat2');recalcCli('h')">🪚 Rabattage sévère (+100%)</div></div><div class="op" data-v="dense" onclick="pick('cli-h-etat',this,'dense');recalcCli('h')">Large / dense (+10%)</div><div class="op" data-v="rabat" onclick="pick('cli-h-etat',this,'rabat');recalcCli('h')">Rabattage léger (+10%)</div><div class="op" data-v="rabat2" onclick="pick('cli-h-etat',this,'rabat2');recalcCli('h')">Rabattage important (+20%)</div></div>
         </div>
         <div style="margin-bottom:.875rem;">
         <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
@@ -790,6 +798,7 @@ footer{background:#0d1f0d;padding:56px 80px 28px;color:rgba(255,255,255,.6);}
       </div>
       
       <!-- RÉSULTAT -->
+      <div id="cli-h-note" style="display:none;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:8px;padding:8px 12px;font-size:12px;color:#3b6d11;margin-bottom:.75rem;"></div>
       <div id="cli-result-h" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
         <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
       </div>
@@ -1524,26 +1533,59 @@ function calcHaiesCli() {
   if(fEl&&fEl.querySelector(".op.on")) fv=fEl.querySelector(".op.on").dataset.v;
   var eEl=document.getElementById("cli-h-etat"), ev="reg";
   if(eEl&&eEl.querySelector(".op.on")) ev=eEl.querySelector(".op.on").dataset.v;
+  var evEl=document.getElementById("cli-h-evac"), evac="non";
+  if(evEl&&evEl.querySelector(".op.on")) evac=evEl.querySelector(".op.on").dataset.v;
 
-  // Base €/ml 1 face selon état
-  var BASE_ML = {"reg":1.50,"dense":2.20,"rabat":3.50,"rabat2":5.50};
-  // Hauteur coefficients
-  var CH = {"h12":1.0,"h15":1.0,"h25":1.3,"h35":1.6,"hpl":2.25};
-  // Faces coefficients
-  var CF = {"1":1.0,"2":1.6,"3":2.1};
-  // Poids déchets kg/m
-  var KG_ML = {"reg":1.5,"dense":4.0,"rabat":12.5,"rabat2":25.0};
+  // Tableau final €/ml selon hauteur ET faces (prix de vente direct)
+  var BASE = {
+    "h12": {"1":1.20, "2":1.90, "3":2.30},
+    "h15": {"1":1.30, "2":2.10, "3":2.50},
+    "h25": {"1":1.50, "2":2.40, "3":2.90},
+    "h35": {"1":1.90, "2":3.00, "3":3.80},
+    "hpl": {"1":2.60, "2":4.15, "3":5.15}
+  };
 
-  var base = BASE_ML[ev] || 2.20;
-  var ch = CH[hv] || 1.0;
-  var cf = CF[fv] || 2.1;
-  var cout_taille = base * ch * cf;
-  var cout_dechets = (KG_ML[ev]||4.0) * PRIX_DECHETS_KG;
-  var cout_transp_fixe = 0.50;
-  var cout_transp_km = hSurf > 0 ? dep(KM.h, CKM_CRAFTER_REM8) / hSurf : 0;
-  var rev_ml = cout_taille + cout_dechets + cout_transp_fixe + cout_transp_km;
+  // Coefficient selon état
+  var COEFF_ETAT = {
+    "reg":   1.00,  // entretien régulier
+    "irr":   1.30,  // haie irrégulière +30%
+    "rabat": 1.60,  // rabattage léger +50-60%
+    "rabat2":2.00   // rabattage sévère +100%
+  };
+
+  var base_ml = (BASE[hv]||BASE["h25"])[fv] || 2.90;
+  var coeff = COEFF_ETAT[ev] || 1.0;
+  var prix_taille = base_ml * coeff;
+
+  // Évacuation: +2 à 5€/m selon état
+  var EVAC_ML = {"non":0, "oui_leg":2.0, "oui_moy":3.5, "oui_lrd":5.0};
+  var prix_evac = EVAC_ML[evac] || 0;
+
+  // Transport: Crafter+remorque, réparti sur longueur
+  var cout_transp_km = hSurf > 0 ? dep(KM.h, CKM_REMORQUE) / hSurf : 0;
+
+  var rev_ml = prix_taille + prix_evac + cout_transp_km;
   var rev = Math.round(rev_ml * hSurf);
   showResultCli("h", rev, MARGE, 120);
+
+  // Note explicative selon état et évacuation
+  var notes = [];
+  if(ev === "irr")    notes.push("Haie irrégulière : travail plus long, zones difficiles d'accès.");
+  if(ev === "rabat")  notes.push("Rabattage léger : taille plus profonde que l'entretien courant, plusieurs passages.");
+  if(ev === "rabat2") notes.push("Rabattage sévère : intervention importante, découpe en profondeur, volume élevé.");
+  if(evac === "oui_leg") notes.push("Évacuation légère incluse.");
+  if(evac === "oui_moy") notes.push("Évacuation des déchets incluse (chargement + transport déchetterie).");
+  if(evac === "oui_lrd") notes.push("Évacuation lourde : volume important, plusieurs voyages possibles.");
+
+  var noteEl = document.getElementById("cli-h-note");
+  if(noteEl) {
+    if(notes.length > 0) {
+      noteEl.style.display = "block";
+      noteEl.innerHTML = "💡 " + notes.join(" ");
+    } else {
+      noteEl.style.display = "none";
+    }
+  }
 }
 
 // ============================================================
