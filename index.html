@@ -1,1 +1,1812 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ar.T.Event & Fils — Paysagiste professionnel en Wallonie et Bruxelles. Entretien jardins, élagage, création espaces verts, pavage. Basé à Franière (Namur). Devis gratuit.">
+<meta name="keywords" content="paysagiste Namur, entretien jardin Wallonie, élagage Franière, espaces verts Bruxelles, tonte haies débroussaillage, création gazon Namur, paysagiste Gembloux, jardinier Charleroi">
+<title>[Ar.T.Event] & Fils — Paysagiste Professionnel | Wallonie & Bruxelles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--vert:#1a3a1a;--vm:#2d5a2d;--vc:#3d7a3d;--or:#c9a84c;--orc:#e8c96a;--orp:#f5e9c0;--blanc:#f8f6f0;--gris:#e8e4dc;--txt:#1a1a18;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--blanc);color:var(--txt);overflow-x:hidden;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(26,58,26,0.97);backdrop-filter:blur(10px);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(201,168,76,0.3);}
+.nl{font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--or);text-decoration:none;letter-spacing:.05em;}
+.nl span{color:#fff;}
+.nm{display:flex;gap:26px;list-style:none;}
+.nm a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;}
+.nm a:hover{color:var(--or);}
+.nc{background:var(--or)!important;color:var(--vert)!important;padding:8px 18px;border-radius:2px;font-weight:600!important;}
+.nc:hover{background:var(--orc)!important;}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:5px;}
+.burger span{display:block;width:24px;height:2px;background:var(--or);}
+#mob{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(26,58,26,.98);z-index:999;padding:28px 32px;}
+#mob ul{list-style:none;display:flex;flex-direction:column;gap:22px;}
+#mob a{color:rgba(255,255,255,.9);text-decoration:none;font-size:1.1rem;}
+#mob .mc{color:var(--or)!important;font-weight:600;}
+/* HERO */
+#accueil{min-height:100vh;position:relative;display:flex;align-items:flex-end;overflow:hidden;}
+.hi{position:absolute;inset:0;background:url("img01.jpg") center/cover no-repeat;}
+.ho{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,18,5,.95) 0%,rgba(5,18,5,.55) 45%,rgba(5,18,5,.15) 100%);}
+.hc{position:relative;z-index:2;padding:80px 80px 90px;max-width:780px;}
+.hb{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);color:var(--orc);padding:6px 16px;border-radius:20px;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:26px;animation:fu .6s ease both;}
+.hb::before{content:'';width:6px;height:6px;background:var(--or);border-radius:50%;}
+.ht{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5.5vw,5rem);color:#fff;line-height:1.05;margin-bottom:10px;animation:fu .6s .1s ease both;}
+.ht em{color:var(--or);font-style:italic;}
+.hco{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2vw,1.6rem);color:var(--or);letter-spacing:.15em;margin-bottom:22px;animation:fu .6s .2s ease both;}
+.hd{font-size:1rem;color:rgba(255,255,255,.78);line-height:1.75;max-width:540px;margin-bottom:38px;font-weight:300;animation:fu .6s .3s ease both;}
+.hbts{display:flex;gap:14px;flex-wrap:wrap;animation:fu .6s .4s ease both;}
+.hs{position:absolute;bottom:55px;right:80px;display:flex;gap:44px;animation:fu .6s .5s ease both;}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--or);line-height:1;font-weight:600;}
+.sl{font-size:.7rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;}
+/* BTNS */
+.bp{background:var(--or);color:var(--vert);padding:13px 28px;border-radius:2px;font-weight:600;font-size:.87rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;transition:all .2s;border:2px solid var(--or);display:inline-block;}
+.bp:hover{background:var(--orc);transform:translateY(-1px);}
+.bs{background:transparent;color:#fff;padding:13px 28px;border-radius:2px;font-weight:500;font-size:.87rem;letter-spacing:.06em;text-decoration:none;text-transform:uppercase;border:2px solid rgba(255,255,255,.4);transition:all .2s;display:inline-block;}
+.bs:hover{border-color:var(--or);color:var(--or);}
+/* SECTION */
+section{padding:88px 80px;}
+.sl2{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--or);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.sl2::before{content:'';width:28px;height:1px;background:var(--or);}
+.st{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.2vw,2.9rem);color:var(--vert);line-height:1.1;margin-bottom:16px;}
+.st em{color:var(--or);font-style:italic;}
+/* SERVICES */
+#services{background:#fff;}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:52px;}
+.si{color:#666;line-height:1.8;font-size:.96rem;font-weight:300;}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gris);}
+.sc{background:#fff;padding:34px 26px;transition:all .3s;position:relative;overflow:hidden;}
+.sc::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.sc:hover::before{transform:scaleX(1);}
+.sc:hover{background:var(--vert);}
+.sc:hover .sn2,.sc:hover .sd{color:#fff;}
+.sc:hover .sic{background:rgba(201,168,76,.2);color:var(--or);}
+.sic{width:48px;height:48px;background:#f0f5f0;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:16px;transition:all .3s;}
+.sn2{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--vert);margin-bottom:7px;font-weight:600;transition:color .3s;}
+.sd{font-size:.82rem;color:#777;line-height:1.6;font-weight:300;transition:color .3s;}
+/* REALISATIONS */
+#realisations{background:var(--blanc);}
+.rh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:16px;}
+.rg{display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:290px 250px;gap:4px;}
+.ri{position:relative;overflow:hidden;cursor:pointer;}
+.ri:first-child{grid-row:1/3;}
+.ri img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.ri:hover img{transform:scale(1.07);}
+.ro{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(26,58,26,.92) 0%,transparent 100%);padding:22px 18px 16px;transform:translateY(100%);transition:transform .35s;}
+.ri:hover .ro{transform:translateY(0);}
+.rot{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;margin-bottom:2px;}
+.ros{font-size:.7rem;color:var(--or);letter-spacing:.1em;text-transform:uppercase;}
+/* GALERIE PLUS */
+.rg2{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:4px;}
+.rg2 .ri{height:200px;}
+/* MATERIEL */
+#materiel{background:var(--vert);padding:88px 80px;}
+#materiel .st{color:#fff;}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:44px;}
+.mi{position:relative;overflow:hidden;height:260px;}
+.mi img{width:100%;height:100%;object-fit:cover;filter:brightness(.72);transition:all .4s;}
+.mi:hover img{filter:brightness(.88);transform:scale(1.04);}
+.ml{position:absolute;bottom:0;left:0;right:0;padding:18px 16px;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 100%);}
+.mlt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;}
+.mls{font-size:.7rem;color:var(--or);letter-spacing:.08em;}
+/* DEVIS */
+#devis{background:#fff;}
+.dc{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start;margin-top:40px;}
+.di p{color:#666;line-height:1.8;font-weight:300;margin-bottom:26px;font-size:.96rem;}
+.dg{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.dg li{display:flex;align-items:center;gap:11px;color:#444;font-size:.87rem;}
+.dg li::before{content:'✓';width:20px;height:20px;background:rgba(26,58,26,.08);border:1px solid var(--vert);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--vert);font-size:.7rem;flex-shrink:0;}
+.df{background:var(--vert);border-radius:4px;padding:40px;}
+.fs{display:none;}
+.fs.active{display:block;animation:fu .4s ease both;}
+.ft{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--or);margin-bottom:5px;}
+.fsub{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:22px;}
+.pb{display:flex;gap:5px;margin-bottom:28px;}
+.pd{height:3px;flex:1;background:rgba(255,255,255,.15);border-radius:2px;transition:background .3s;}
+.pd.active{background:var(--or);}
+.ss{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px;}
+.so{border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:11px 13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px;font-size:.84rem;color:rgba(255,255,255,.8);}
+.so:hover{border-color:var(--or);color:#fff;}
+.so.sel{border-color:var(--or);background:rgba(201,168,76,.1);color:#fff;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-size:.74rem;color:rgba(255,255,255,.55);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:10px 13px;color:#fff;font-family:'Outfit',sans-serif;font-size:.87rem;outline:none;transition:border-color .2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.3);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--or);}
+.fg select option{background:var(--vert);}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
+.bf{width:100%;background:var(--or);color:var(--vert);border:none;padding:13px;border-radius:2px;font-family:'Outfit',sans-serif;font-weight:600;font-size:.87rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:5px;}
+.bf:hover{background:var(--orc);transform:translateY(-1px);}
+.bk{background:transparent;color:rgba(255,255,255,.45);border:none;font-size:.78rem;cursor:pointer;font-family:'Outfit',sans-serif;margin-top:9px;display:block;text-align:center;width:100%;transition:color .2s;}
+.bk:hover{color:#fff;}
+.conf{text-align:center;padding:12px 0;}
+.ci{width:66px;height:66px;background:rgba(201,168,76,.15);border:2px solid var(--or);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin:0 auto 18px;}
+.conf h3{font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:var(--or);margin-bottom:9px;}
+.conf p{color:rgba(255,255,255,.7);line-height:1.7;font-size:.9rem;}
+/* A PROPOS */
+#apropos{background:var(--vert);}
+#apropos .st{color:#fff;}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px;}
+.ap{position:relative;height:440px;overflow:hidden;border-radius:2px;}
+.ap img{width:100%;height:100%;object-fit:cover;}
+.apc{position:absolute;bottom:0;left:0;right:0;padding:18px;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 100%);color:rgba(255,255,255,.75);font-size:.78rem;font-style:italic;}
+.at p{color:rgba(255,255,255,.75);line-height:1.85;font-weight:300;font-size:.96rem;margin-bottom:16px;}
+.at strong{color:var(--or);font-weight:500;}
+.certs{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px;}
+.cb{background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.3);color:var(--orc);padding:5px 12px;border-radius:20px;font-size:.74rem;letter-spacing:.06em;}
+.avs{display:flex;flex-direction:column;gap:24px;margin-top:8px;}
+.av{display:flex;gap:18px;align-items:flex-start;}
+.avi{width:46px;height:46px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;}
+.avt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--or);margin-bottom:3px;}
+.avd{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.6;font-weight:300;}
+/* ZONE */
+#zone{background:var(--blanc);}
+.zg{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:40px;}
+.zm{background:linear-gradient(135deg,#e8f0e8 0%,#d4e8d4 100%);border-radius:4px;min-height:340px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border:1px solid #c8dcc8;}
+.ws{position:absolute;inset:20px;background:rgba(26,58,26,.07);border-radius:40% 60% 55% 45%/45% 40% 60% 55%;}
+.pin{position:absolute;display:flex;flex-direction:column;align-items:center;}
+.pd2{width:10px;height:10px;background:var(--or);border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+.pl{background:var(--vert);color:#fff;font-size:.6rem;padding:2px 5px;border-radius:2px;margin-top:3px;white-space:nowrap;font-weight:500;}
+.ph .pd2{background:#e84c4c;width:13px;height:13px;}
+.cl{columns:2;gap:14px;list-style:none;margin-top:18px;}
+.cl li{font-size:.83rem;color:#555;padding:3px 0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:5px;}
+.cl li::before{content:'📍';font-size:.68rem;}
+.zn{margin-top:20px;background:var(--orp);border-left:3px solid var(--or);padding:12px 16px;border-radius:0 3px 3px 0;font-size:.83rem;color:var(--vert);line-height:1.6;}
+/* CONTACT */
+#contact{background:#fff;}
+.cog{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;margin-top:40px;}
+.coi{display:flex;flex-direction:column;gap:24px;}
+.coit{display:flex;gap:14px;align-items:flex-start;}
+.coic{width:42px;height:42px;background:var(--vert);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.coilab{font-size:.73rem;color:var(--or);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+.coiv{font-size:.93rem;color:var(--txt);font-weight:500;}
+.coisub{font-size:.8rem;color:#888;margin-top:2px;}
+.wa{display:flex;align-items:center;gap:11px;background:#25D366;color:#fff;padding:13px 22px;border-radius:3px;text-decoration:none;font-weight:600;font-size:.93rem;transition:all .2s;margin-top:6px;}
+.wa:hover{background:#1ebe5c;transform:translateY(-1px);}
+.cof{background:#fff;border:1px solid var(--gris);border-radius:4px;padding:36px;}
+.cof .fg label{color:#666;}
+.cof input,.cof select,.cof textarea{background:#fafafa;border:1px solid #e0e0e0;color:var(--txt);}
+.cof input:focus,.cof select:focus,.cof textarea:focus{border-color:var(--vert);}
+.cof .bf{background:var(--vert);color:#fff;}
+.cof .bf:hover{background:var(--vm);}
+/* FOOTER */
+footer{background:#0d1f0d;padding:56px 80px 28px;color:rgba(255,255,255,.6);}
+.fg2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:56px;margin-bottom:44px;}
+.fb{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:var(--or);margin-bottom:14px;}
+.fb span{color:rgba(255,255,255,.7);}
+.fd{font-size:.83rem;line-height:1.7;font-weight:300;max-width:280px;}
+.ft2{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--or);margin-bottom:18px;}
+.fl{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.fl a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.83rem;transition:color .2s;}
+.fl a:hover{color:var(--or);}
+.fbot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;font-size:.76rem;}
+/* ANIM */
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease;}
+.reveal.vis{opacity:1;transform:translateY(0);}
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 20px;}
+  .nm{display:none;}
+  .burger{display:flex;}
+  section{padding:60px 24px;}
+  #materiel{padding:60px 24px;}
+  footer{padding:44px 24px 22px;}
+  .hc{padding:80px 24px 70px;}
+  .hs{display:none;}
+  .sh{grid-template-columns:1fr;gap:16px;}
+  .sg{grid-template-columns:1fr 1fr;}
+  .rg{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .ri:first-child{grid-row:auto;}
+  .rg2{grid-template-columns:1fr 1fr;}
+  .mg{grid-template-columns:1fr 1fr;}
+  .dc{grid-template-columns:1fr;gap:36px;}
+  .ag{grid-template-columns:1fr;gap:36px;}
+  .zg{grid-template-columns:1fr;gap:36px;}
+  .cog{grid-template-columns:1fr;gap:36px;}
+  .fg2{grid-template-columns:1fr;gap:28px;}
+  .fbot{flex-direction:column;gap:6px;text-align:center;}
+  .ss{grid-template-columns:1fr;}
+  .fr{grid-template-columns:1fr;}
+  .rh{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:600px){
+  .sg{grid-template-columns:1fr;}
+  .mg{grid-template-columns:1fr;}
+  .rg{grid-template-columns:1fr;}
+  .rg2{grid-template-columns:1fr 1fr;}
+  .cl{columns:1;}
+  .hbts{flex-direction:column;}
+}
+</style>
+</head>
+<body>
 
+<nav id="nb">
+  <a href="#accueil" class="nl">[Ar.T.Event] <span>& Fils</span></a>
+  <ul class="nm">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#devis" class="nc">Devis gratuit</a></li>
+  </ul>
+  <button class="burger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="mob">
+  <ul>
+    <li><a href="#services" onclick="toggleMob()">Services</a></li>
+    <li><a href="#realisations" onclick="toggleMob()">Réalisations</a></li>
+    <li><a href="#apropos" onclick="toggleMob()">À propos</a></li>
+    <li><a href="#zone" onclick="toggleMob()">Zone d'intervention</a></li>
+    <li><a href="#contact" onclick="toggleMob()">Contact</a></li>
+    <li><a href="#devis" class="mc" onclick="toggleMob()">→ Devis gratuit</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="accueil">
+  <div class="hi"></div>
+  <div class="ho"></div>
+  <div class="hc">
+    <div class="hb">Paysagiste professionnel — Wallonie & Bruxelles</div>
+    <h1 class="ht">L'art de sublimer<br><em>vos espaces verts</em></h1>
+    <p class="hco">[Ar.T.Event] & Fils</p>
+    <p class="hd">Entretien, création et aménagement d'espaces extérieurs pour particuliers, entreprises et collectivités. Basés à Franière, nous intervenons dans tout le Namurois, la Wallonie et Bruxelles.</p>
+    <div class="hbts">
+      <a href="#devis" class="bp">Demander un devis gratuit</a>
+      <a href="#realisations" class="bs">Voir nos réalisations</a>
+    </div>
+  </div>
+  <div class="hs">
+    <div><div class="sn">20+</div><div class="sl">Ans d'expérience</div></div>
+    <div><div class="sn">35+</div><div class="sl">Communes</div></div>
+    <div><div class="sn">100%</div><div class="sl">Satisfaction</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="sh">
+    <div>
+      <div class="sl2">Ce que nous faisons</div>
+      <h2 class="st">Nos <em>services</em> paysagers</h2>
+    </div>
+    <p class="si">De l'entretien régulier à la création complète d'espaces verts, notre équipe intervient avec le matériel professionnel adapté à chaque chantier — du jardin privé à la zone d'activité en passant par les domaines communaux.</p>
+  </div>
+  <div class="sg">
+    <div class="sc reveal"><div class="sic">🌿</div><div class="sn2">Tonte & Entretien</div><div class="sd">Tonte régulière, mulching ou ramassage, finitions bordures. Fréquence adaptée à votre terrain et vos besoins.</div></div>
+    <div class="sc reveal"><div class="sic">✂️</div><div class="sn2">Taille de haies</div><div class="sd">Taille et formation de haies, arbustes et topiaires. Évacuation ou broyage des déchets verts inclus.</div></div>
+    <div class="sc reveal"><div class="sic">🌾</div><div class="sn2">Débroussaillage</div><div class="sd">Gyrobroyeur, Orion ou débroussailleuse selon la nature du terrain. Grandes surfaces acceptées.</div></div>
+    <div class="sc reveal"><div class="sic">🌳</div><div class="sn2">Élagage & Abattage</div><div class="sd">Élagage raisonné, recépage, abattage avec évacuation. Intervention sécurisée par équipe formée.</div></div>
+    <div class="sc reveal"><div class="sic">🌱</div><div class="sn2">Création de gazon</div><div class="sd">Semis ou rouleaux, préparation du sol, fourniture et pose. Calcul précis des matériaux sur mesure.</div></div>
+    <div class="sc reveal"><div class="sic">🪨</div><div class="sn2">Pavage & Terrassement</div><div class="sd">Allées, terrasses, drèves. Pose de pavés, dalles, gravier ou murets avec finitions soignées.</div></div>
+    <div class="sc reveal"><div class="sic">🌼</div><div class="sn2">Plantations</div><div class="sd">Fourniture et plantation d'arbres, arbustes, vivaces. Massifs, rocailles et aménagements sur mesure.</div></div>
+    <div class="sc reveal"><div class="sic">🍂</div><div class="sn2">Paillage & Géotextile</div><div class="sd">Paillage minéral ou végétal, pose de géotextile anti-mauvaises herbes. Protection durable des massifs.</div></div>
+    <div class="sc reveal"><div class="sic">🛖</div><div class="sn2">Aménagements spéciaux</div><div class="sd">Terrasses bois, murets de soutènement, gabions, saunas extérieurs et constructions de jardin.</div></div>
+  </div>
+  <div style="text-align:center;margin-top:44px;">
+    <a href="#devis" class="bp">Obtenir une estimation tarifaire</a>
+  </div>
+</section>
+
+<!-- REALISATIONS -->
+<section id="realisations">
+  <div class="rh">
+    <div>
+      <div class="sl2">Notre travail</div>
+      <h2 class="st">Nos <em>réalisations</em></h2>
+    </div>
+    <p style="color:#777;font-size:.88rem;max-width:260px;font-weight:300;line-height:1.6;">Chaque chantier est unique. Quelques exemples de nos interventions récentes en Wallonie.</p>
+  </div>
+  <div class="rg">
+    <div class="ri reveal">
+      <img src="img02.jpg" alt="Jardin avec topiaires et pelouse entretenue - Ar.T.Event">
+      <div class="ro"><div class="rot">Taille topiaires &amp; entretien</div><div class="ros">Domaine privé — Namur</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img03.jpg" alt="Rangée de cyprès et grande pelouse - Ar.T.Event">
+      <div class="ro"><div class="rot">Tonte gazon &amp; entretien cyprès d'Italie</div><div class="ros">Domaine privé</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img04.jpg" alt="Haies de charme taillées - Ar.T.Event">
+      <div class="ro"><div class="rot">Haies de charme</div><div class="ros">Taille automne</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img05.jpg" alt="Gazon en rouleaux - Ar.T.Event">
+      <div class="ro"><div class="rot">Gazon en rouleaux</div><div class="ros">Maison neuve — Wallonie</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img06.jpg" alt="Gazon en rouleaux et massif rocaille - Ar.T.Event">
+      <div class="ro"><div class="rot">Réalisation gazon en semis</div><div class="ros">Création complète</div></div>
+    </div>
+  </div>
+  <div class="rg2" style="margin-top:4px;">
+    <div class="ri reveal">
+      <img src="img07.jpg" alt="Allée en gravier et pelouse espace public - Ar.T.Event">
+      <div class="ro"><div class="rot">Allée gravier — tonte gazon, entretien parterres &amp; arbustes</div><div class="ros">Commune</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img08.jpg" alt="Clôture Zenturo pierres palplanches Azobé - Ar.T.Event">
+      <div class="ro"><div class="rot">Clôture Zenturo & pierres</div><div class="ros">Palplanches Azobé — Namur</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img09.jpg" alt="Plantation massif avec géotextile - Ar.T.Event">
+      <div class="ro"><div class="rot">Géotextile + rosiers &amp; lavandes</div><div class="ros">Géotextile + rosiers & lavandes</div></div>
+    </div>
+    <div class="ri reveal">
+      <img src="img10.jpg" alt="Terrasse bois avec sauna barrel - Ar.T.Event">
+      <div class="ro"><div class="rot">Terrasse & sauna barrel</div><div class="ros">Aménagement premium</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MATERIEL -->
+<section id="materiel">
+  <div class="sl2" style="color:var(--or);">Notre équipement</div>
+  <h2 class="st">Un <em>parc machines</em> professionnel</h2>
+  <div class="mg">
+    <div class="mi reveal">
+      <img src="img11.jpg" alt="Orion dumper sur chenilles Ar.T.Event">
+      <div class="ml"><div class="mlt">Dumper sur chenilles</div><div class="mls">Terrassement & transport</div></div>
+    </div>
+    <div class="mi reveal">
+      <img src="img12.jpg" alt="Tracteur débroussaillage Iseki TM3217">
+      <div class="ml"><div class="mlt">Tracteur Iseki + gyrobroyeur</div><div class="mls">Débroussaillage grandes surfaces</div></div>
+    </div>
+    <div class="mi reveal">
+      <img src="img13.jpg" alt="Grue 6T Ar.T.Event">
+      <div class="ml"><div class="mlt">Grue 6T</div><div class="mls">Levage & manutention</div></div>
+    </div>
+    <div class="mi reveal">
+      <img src="img14.jpg" alt="Iseki SXG 19 tonte golf - Ar.T.Event">
+      <div class="ml"><div class="mlt">Iseki SXG 19</div><div class="mls">Tonte professionnelle grandes surfaces</div></div>
+    </div>
+    <div class="mi reveal">
+      <img src="img15.jpg" alt="Chargeur avant élagage - Ar.T.Event">
+      <div class="ml"><div class="mlt">Chargeur avant</div><div class="mls">Élagage &amp; enlèvement d'arbres</div></div>
+    </div>
+    <div class="mi reveal">
+      <img src="img16.jpg" alt="Petit matériel Stihl entretien - Ar.T.Event">
+      <div class="ml"><div class="mlt">Petit matériel Stihl</div><div class="mls">Tronçonneuses, taille-haies, débroussailleuses</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEVIS -->
+<section id="devis">
+  <div class="sl2">Estimation en ligne</div>
+  <h2 class="st">Demandez votre <em>devis gratuit</em></h2>
+  <div class="dc">
+    <div class="di">
+      <p>Remplissez ce formulaire en quelques secondes. Nous vous recontactons sous <strong style="color:var(--vert);font-weight:600;">24 à 48h</strong> avec une estimation personnalisée et, si nécessaire, une proposition de visite gratuite sur site.</p>
+      <ul class="dg">
+        <li>Devis gratuit et sans engagement</li>
+        <li>Visite sur site incluse si nécessaire</li>
+        <li>Réponse sous 24 à 48 heures</li>
+        <li>Intervention possible en urgence</li>
+        <li>Équipe certifiée phytolicence</li>
+        <li>Couverture Wallonie & Bruxelles</li>
+      </ul>
+    </div>
+    
+<style>
+
+#outil-devis .ochoix { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.875rem; }
+#outil-devis .op { padding:6px 13px;border-radius:20px;font-size:12px;cursor:pointer;border:1.5px solid #ddd;background:#f5f0e8;color:#333;transition:all .15s; }
+#outil-devis .op.on { background:#1a3a1a;color:#c9a84c;border-color:#1a3a1a; }
+#outil-devis .fg { margin-bottom:.875rem; }
+#outil-devis .fg > label { font-size:12px;font-weight:600;color:#555;display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.3px; }
+#outil-devis .sb { background:#fff;border-radius:10px;padding:1rem;margin-bottom:.75rem;border:1px solid #e8e0d0; }
+#outil-devis .bt { font-size:11px;font-weight:700;color:#c9a84c;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.75rem; }
+.cli-est-label { font-size:11px;color:#8ab08a;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px; }
+.cli-est-price { font-size:28px;font-weight:700;color:#c9a84c;margin-bottom:4px; }
+.cli-est-note { font-size:10px;color:#5a7a5a;font-style:italic; }
+.cli-est-empty { color:#8ab08a;font-size:13px; }
+
+#outil-devis { background:#f8f5f0;border-radius:16px;overflow:hidden;border:2px solid rgba(201,168,76,.3);margin-top:2rem;box-shadow:0 8px 32px rgba(0,0,0,.12); }
+#outil-devis .outil-header { background:#1a3a1a;padding:1rem 1.5rem; }
+#outil-devis .outil-title { color:#c9a84c;font-size:14px;font-weight:700;letter-spacing:.5px; }
+#outil-devis .outil-subtitle { font-size:11px;color:#8ab08a;margin-top:3px; }
+#outil-devis .outil-nav { display:flex;flex-wrap:wrap;gap:4px;padding:.625rem .75rem;background:#fff;border-bottom:2px solid #1a3a1a;position:sticky;top:0;z-index:10; }
+#outil-devis .onb { padding:6px 12px;border-radius:16px;font-size:11px;font-weight:600;cursor:pointer;border:1.5px solid #ddd;background:#f5f5f5;color:#555;white-space:nowrap;transition:all .15s; }
+#outil-devis .onb.on { background:#1a3a1a;color:#c9a84c;border-color:#1a3a1a; }
+#outil-devis .outil-body { padding:.875rem;max-height:80vh;overflow-y:auto; }
+#outil-devis .opage { display:none; }
+#outil-devis .opage.on { display:block; }
+.btn-wa-gsm { display:block; }
+.pc-only-email .btn-wa-gsm { display:none!important; }
+</style>
+
+<div id="outil-devis">
+  <div class="outil-header">
+    <div class="outil-title">Estimez le coût de vos travaux</div>
+    <div class="outil-subtitle">Estimation indicative — non contractuelle — confirmation après visite gratuite sur site</div>
+  </div>
+  <div class="outil-nav" id="outil-nav">
+    <div class="onb on" onclick="outilPage('gazon')">🌱 Gazon</div>
+    <div class="onb" onclick="outilPage('tonte')">✂️ Tonte</div>
+    <div class="onb" onclick="outilPage('debrou')">🌿 Débroussaillage</div>
+    <div class="onb" onclick="outilPage('haies')">🌳 Haies</div>
+    <div class="onb" onclick="outilPage('desherb')">🚫 Désherbage</div>
+    <div class="onb" onclick="outilPage('ferti')">🌱 Fertilisation</div>
+    <div class="onb" onclick="outilPage('desouch')">🪵 Dessouchage</div>
+  </div>
+  <div class="outil-body">
+    <div class="opage on" id="opg-gazon">
+
+      <div class="sb"><div class="bt">Création de gazon</div>
+        <div class="fg"><label>Type de gazon</label>
+          <div class="ochoix" id="cli-g-semis-og">
+            <div class="op on" data-v="semis" onclick="pick('cli-g-semis-og',this,'semis');setGType('semis')">🌱 Gazon semé (3-4 semaines)</div>
+            <div class="op" data-v="rouleaux" onclick="pick('cli-g-semis-og',this,'rouleaux');setGType('rouleaux')">🎯 Rouleaux (résultat immédiat)</div>
+          </div>
+        </div>
+        <div class="fg"><label>Préparation du sol</label>
+          <div class="ochoix" id="cli-g-meth-og">
+            <div class="op" data-v="barreto" onclick="pick('cli-g-meth-og',this,'barreto');setGMethode('barreto')">Accès difficile / Barreto</div>
+            <div class="op on" data-v="tracteur" onclick="pick('cli-g-meth-og',this,'tracteur');setGMethode('tracteur')">Tracteur + fraise (accès normal)</div>
+            <div class="op" data-v="rotadairon" onclick="pick('cli-g-meth-og',this,'rotadairon');setGMethode('rotadairon')">Rotadairon (finition supérieure)</div>
+          </div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Surface <span style="font-weight:700;color:#1a3a1a;" id="cli-g-sv">200 m²</span>
+        </label>
+        <input type="range" min="1" max="5000" step="50" value="200"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="gSurf=parseInt(this.value);document.getElementById('cli-g-sv').textContent=this.value+' m²';recalcCli('g');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="5000" placeholder="200"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){gSurf=v;document.getElementById('cli-g-sv').textContent=v+' m²';recalcCli('g');}">
+        </div>
+      </div>
+        <div class="fg"><label>Etat du terrain</label>
+          <div class="ochoix" id="cli-g-etat"><div class="op on" data-v="nu" onclick="pick('cli-g-etat',this,'nu');recalcCli('g')">Terrain nu / préparé</div><div class="op" data-v="rase" onclick="pick('cli-g-etat',this,'rase');recalcCli('g')">Herbe rase</div><div class="op" data-v="haute" onclick="pick('cli-g-etat',this,'haute');recalcCli('g')">Herbe haute</div><div class="op" data-v="envahi" onclick="pick('cli-g-etat',this,'envahi');recalcCli('g')">Très envahi</div></div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-gazon-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('g');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('g')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-gazon-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-g" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('gazon',this)">
+        </label>
+        <div id="cli-gazon-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-gazon-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-gazon-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-gazon-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('gazon')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('gazon')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-tonte">
+
+      <div class="sb"><div class="bt">Tonte de pelouse</div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Surface de la pelouse <span style="font-weight:700;color:#1a3a1a;" id="cli-t-sv">1000 m²</span>
+        </label>
+        <input type="range" min="1" max="10000" step="50" value="1000"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="tSurf=parseInt(this.value);document.getElementById('cli-t-sv').textContent=this.value+' m²';recalcCli('t');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="10000" placeholder="1000"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){tSurf=v;document.getElementById('cli-t-sv').textContent=v+' m²';recalcCli('t');}">
+        </div>
+      </div>
+                <div class="fg"><label>Accès au jardin</label>
+          <div class="og" id="cli-t-acces">
+            <div class="op on" data-v="large" onclick="pick('cli-t-acces',this,'large');recalcCli('t')">&#10003; Accès &#8805; 130cm — portail, allée (SXG19)</div>
+            <div class="op" data-v="etroit" onclick="pick('cli-t-acces',this,'etroit');recalcCli('t')">&#9888; Accès étroit &lt; 130cm — portillon, escaliers</div>
+          </div>
+        </div>
+<div class="fg"><label>Hauteur de l'herbe</label>
+          <div class="ochoix" id="cli-t-haut"><div class="op on" data-v="norm" onclick="pick('cli-t-haut',this,'norm');recalcCli('t')">5-10cm — entretien régulier</div><div class="op" data-v="h10" onclick="pick('cli-t-haut',this,'h10');recalcCli('t')">10-20cm — 2-3 semaines</div><div class="op" data-v="h20" onclick="pick('cli-t-haut',this,'h20');recalcCli('t')">20-40cm — 1 mois</div><div class="op" data-v="h40" onclick="pick('cli-t-haut',this,'h40');recalcCli('t')">40-60cm — plusieurs mois</div><div class="op" data-v="h60" onclick="pick('cli-t-haut',this,'h60');recalcCli('t')">60-80cm — abandon partiel</div><div class="op" data-v="h80" onclick="pick('cli-t-haut',this,'h80');recalcCli('t')">80-100cm — abandon total</div></div>
+        </div>
+        <div class="fg"><label>Mode</label>
+          <div class="ochoix" id="cli-t-mode"><div class="op on" data-v="mulching" onclick="pick('cli-t-mode',this,'mulching');recalcCli('t')">Mulching (déchets restent)</div><div class="op" data-v="ramassage" onclick="pick('cli-t-mode',this,'ramassage');recalcCli('t')">Ramassage des déchets</div></div>
+        </div>
+        <div class="fg"><label>Fréquence souhaitée</label>
+          <div class="ochoix" id="cli-t-freq"><div class="op on" data-v="7-10" onclick="pick('cli-t-freq',this,'7-10');recalcCli('t')">Toutes les semaines</div><div class="op" data-v="2sem" onclick="pick('cli-t-freq',this,'2sem');recalcCli('t')">Toutes les 2 semaines</div><div class="op" data-v="3sem" onclick="pick('cli-t-freq',this,'3sem');recalcCli('t')">Toutes les 3 semaines</div><div class="op" data-v="mensuel" onclick="pick('cli-t-freq',this,'mensuel');recalcCli('t')">1 fois par mois</div><div class="op" data-v="abandon" onclick="pick('cli-t-freq',this,'abandon');recalcCli('t')">Remise en état</div></div>
+        </div>
+      </div>
+
+      <!-- BORDURES OPTIONNEL -->
+      <div class="sb">
+        <div style="display:flex;align-items:center;gap:10px;cursor:pointer;" onclick="toggleBorduresCli()">
+          <div id="cli-bord-toggle" style="width:44px;height:24px;background:#ddd;border-radius:12px;position:relative;transition:background .2s;flex-shrink:0;">
+            <div id="cli-bord-knob" style="width:20px;height:20px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:left .2s;box-shadow:0 1px 3px rgba(0,0,0,.3);"></div>
+          </div>
+          <div>
+            <div style="font-size:13px;font-weight:600;color:#1a3a1a;">Inclure la taille des bordures ?</div>
+            <div style="font-size:11px;color:#888;">Activez pour ajouter ce service</div>
+          </div>
+        </div>
+        <div id="cli-bord-section" style="display:none;margin-top:.875rem;padding-top:.875rem;border-top:1px solid #eee;">
+          <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Longueur des bordures <span style="font-weight:700;color:#1a3a1a;" id="cli-b-sv">50 ml</span>
+        </label>
+        <input type="range" min="1" max="500" step="5" value="50"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="bSurf=parseInt(this.value);document.getElementById('cli-b-sv').textContent=this.value+' ml';recalcCli('b');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="500" placeholder="50"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){bSurf=v;document.getElementById('cli-b-sv').textContent=v+' ml';recalcCli('b');}">
+        </div>
+      </div>
+          <div class="fg"><label>Etat des bordures</label>
+            <div class="ochoix" id="cli-b-etat"><div class="op on" data-v="simple" onclick="pick('cli-b-etat',this,'simple');recalcCli('b')">Entretien régulier</div><div class="op" data-v="norm" onclick="pick('cli-b-etat',this,'norm');recalcCli('b')">Herbe normale</div><div class="op" data-v="haut" onclick="pick('cli-b-etat',this,'haut');recalcCli('b')">Herbe haute</div><div class="op" data-v="env" onclick="pick('cli-b-etat',this,'env');recalcCli('b')">Très envahies</div></div>
+          </div>
+          <div id="cli-result-b" style="background:#1a3a1a;border-radius:8px;padding:.75rem;text-align:center;">
+            <div style="font-size:10px;color:#8ab08a;">Supplément bordures</div>
+            <div class="cli-est-price" style="font-size:18px;" id="cli-bord-price-val">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-tonte-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('t');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('t')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-tonte-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-t" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('tonte',this)">
+        </label>
+        <div id="cli-tonte-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-tonte-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-tonte-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-tonte-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('tonte')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('tonte')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-debrou">
+
+      <div class="sb"><div class="bt">Débroussaillage</div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Surface à débroussailler <span style="font-weight:700;color:#1a3a1a;" id="cli-d-sv">500 m²</span>
+        </label>
+        <input type="range" min="1" max="20000" step="50" value="500"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="dSurf=parseInt(this.value);document.getElementById('cli-d-sv').textContent=this.value+' m²';recalcCli('d');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="20000" placeholder="500"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){dSurf=v;document.getElementById('cli-d-sv').textContent=v+' m²';recalcCli('d');}">
+        </div>
+      </div>
+        <div class="fg"><label>Type de végétation</label>
+          <div class="ochoix" id="cli-d-veg"><div class="op on" data-v="herbe" onclick="pick('cli-d-veg',this,'herbe');recalcCli('d')">Herbe haute simple</div><div class="op" data-v="herbe2" onclick="pick('cli-d-veg',this,'herbe2');recalcCli('d')">Herbe très haute (80cm+)</div><div class="op" data-v="orties" onclick="pick('cli-d-veg',this,'orties');recalcCli('d')">Orties / végétation dense</div><div class="op" data-v="ronces1" onclick="pick('cli-d-veg',this,'ronces1');recalcCli('d')">Ronces légères</div><div class="op" data-v="ronces2" onclick="pick('cli-d-veg',this,'ronces2');recalcCli('d')">Ronces denses</div><div class="op" data-v="ligneux" onclick="pick('cli-d-veg',this,'ligneux');recalcCli('d')">Arbustes / ligneux</div></div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-debrou-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('d');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('d')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-debrou-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-d" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('debrou',this)">
+        </label>
+        <div id="cli-debrou-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-debrou-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-debrou-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-debrou-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('debrou')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('debrou')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-haies">
+
+      <div class="sb"><div class="bt">Taille de haies</div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Longueur de la haie <span style="font-weight:700;color:#1a3a1a;" id="cli-h-sv">50 ml</span>
+        </label>
+        <input type="range" min="1" max="200" step="5" value="50"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="hSurf=parseInt(this.value);document.getElementById('cli-h-sv').textContent=this.value+' ml';recalcCli('h');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="200" placeholder="50"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){hSurf=v;document.getElementById('cli-h-sv').textContent=v+' ml';recalcCli('h');}">
+        </div>
+      </div>
+        <div class="fg"><label>Hauteur</label>
+          <div class="ochoix" id="cli-h-haut"><div class="op on" data-v="h12" onclick="pick('cli-h-haut',this,'h12');recalcCli('h')">Moins de 1.2m</div><div class="op" data-v="h15" onclick="pick('cli-h-haut',this,'h15');recalcCli('h')">1.2 à 1.5m</div><div class="op" data-v="h25" onclick="pick('cli-h-haut',this,'h25');recalcCli('h')">1.5 à 2.5m (échelle)</div><div class="op" data-v="h35" onclick="pick('cli-h-haut',this,'h35');recalcCli('h')">2.5 à 3.5m (échelle)</div><div class="op" data-v="hpl" onclick="pick('cli-h-haut',this,'hpl');recalcCli('h')">Plus de 3.5m (échelle)</div></div>
+        </div>
+        <div class="fg"><label>Faces à tailler</label>
+          <div class="ochoix" id="cli-h-faces"><div class="op" data-v="1" onclick="pick('cli-h-faces',this,'1');recalcCli('h')">1 face</div><div class="op" data-v="2" onclick="pick('cli-h-faces',this,'2');recalcCli('h')">2 faces</div><div class="op on" data-v="3" onclick="pick('cli-h-faces',this,'3');recalcCli('h')">3 faces</div></div>
+        </div>
+        <div class="fg"><label>Etat</label>
+          <div class="ochoix" id="cli-h-etat"><div class="op on" data-v="reg" onclick="pick('cli-h-etat',this,'reg');recalcCli('h')">Entretien régulier</div><div class="op" data-v="dense" onclick="pick('cli-h-etat',this,'dense');recalcCli('h')">Large / dense (+10%)</div><div class="op" data-v="rabat" onclick="pick('cli-h-etat',this,'rabat');recalcCli('h')">Rabattage léger (+10%)</div><div class="op" data-v="rabat2" onclick="pick('cli-h-etat',this,'rabat2');recalcCli('h')">Rabattage important (+20%)</div></div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-haies-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('h');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('h')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-haies-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-h" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('haies',this)">
+        </label>
+        <div id="cli-haies-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-haies-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-haies-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-haies-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('haies')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('haies')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-desherb">
+
+      <div class="sb"><div class="bt">Désherbage</div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Surface à désherber <span style="font-weight:700;color:#1a3a1a;" id="cli-dh-sv">200 m²</span>
+        </label>
+        <input type="range" min="1" max="2000" step="50" value="200"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="dhSurf=parseInt(this.value);document.getElementById('cli-dh-sv').textContent=this.value+' m²';recalcCli('dh');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="2000" placeholder="200"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){dhSurf=v;document.getElementById('cli-dh-sv').textContent=v+' m²';recalcCli('dh');}">
+        </div>
+      </div>
+        <div class="fg"><label>Méthode</label>
+          <div class="ochoix" id="cli-dh-meth"><div class="op on" data-v="thermique" onclick="pick('cli-dh-meth',this,'thermique');recalcCli('dh')">🌿 Écologique (thermique)</div><div class="op" data-v="chimique" onclick="pick('cli-dh-meth',this,'chimique');recalcCli('dh')">⚗️ Chimique (herbicide)</div></div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-desherb-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('dh');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('dh')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-desherb-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-dh" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('desherb',this)">
+        </label>
+        <div id="cli-desherb-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-desherb-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-desherb-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-desherb-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('desherb')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('desherb')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-ferti">
+
+      <div class="sb"><div class="bt">Amendement & Fertilisation</div>
+        <div style="margin-bottom:.875rem;">
+        <label style="display:flex;justify-content:space-between;font-size:13px;color:#555;font-weight:500;margin-bottom:6px;">
+          Surface de pelouse <span style="font-weight:700;color:#1a3a1a;" id="cli-f-sv">500 m²</span>
+        </label>
+        <input type="range" min="1" max="5000" step="50" value="500"
+          style="width:100%;accent-color:#1a3a1a;margin-bottom:6px;"
+          oninput="fSurf=parseInt(this.value);document.getElementById('cli-f-sv').textContent=this.value+' m²';recalcCli('f');">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;">Ou saisir directement :</span>
+          <input type="number" min="0" max="5000" placeholder="500"
+            style="width:80px;border:1.5px solid #ddd;border-radius:6px;padding:4px 8px;font-size:13px;"
+            oninput="var v=parseInt(this.value);if(v>0){fSurf=v;document.getElementById('cli-f-sv').textContent=v+' m²';recalcCli('f');}">
+        </div>
+      </div>
+        <div class="fg"><label>Services souhaités</label>
+          <div class="ochoix">
+            <div class="op on" onclick="this.classList.toggle('on');var chk=document.getElementById('cli-f-calcaire');if(chk)chk.checked=this.classList.contains('on');recalcCli('f')">Chaulage (pH)</div>
+            <div class="op" onclick="this.classList.toggle('on');var chk=document.getElementById('cli-f-startpro');if(chk)chk.checked=this.classList.contains('on');recalcCli('f')">Engrais fertilisant</div>
+          </div>
+          <input type="checkbox" id="cli-f-calcaire" checked style="display:none;">
+          <input type="checkbox" id="cli-f-startpro" style="display:none;">
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-ferti-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('f');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('f')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-ferti-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-f" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('ferti',this)">
+        </label>
+        <div id="cli-ferti-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-ferti-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-ferti-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-ferti-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('ferti')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('ferti')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+    <div class="opage" id="opg-desouch">
+
+      <div class="sb"><div class="bt">Dessouchage</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:.875rem;">
+          <div style="background:#f5f0e8;border:1px solid #e0d5c0;border-radius:8px;padding:.75rem;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#1a3a1a;margin-bottom:2px;">Petite — &lt;20cm</div>
+            <div style="font-size:10px;color:#888;margin-bottom:.5rem;">15 min / souche</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+              <button onclick="var n=Math.max(0,(dsNb.petite||0)-1);dsNb.petite=n;document.getElementById('dsn-p').textContent=n;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:16px;">-</button>
+              <span id="dsn-p" style="font-size:18px;font-weight:700;color:#1a3a1a;min-width:24px;text-align:center;">0</span>
+              <button onclick="dsNb.petite=(dsNb.petite||0)+1;document.getElementById('dsn-p').textContent=dsNb.petite;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:none;background:#1a3a1a;color:#c9a84c;cursor:pointer;font-size:16px;">+</button>
+            </div>
+          </div>
+          <div style="background:#f5f0e8;border:1px solid #e0d5c0;border-radius:8px;padding:.75rem;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#1a3a1a;margin-bottom:2px;">Moyenne — 20-40cm</div>
+            <div style="font-size:10px;color:#888;margin-bottom:.5rem;">30 min / souche</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+              <button onclick="var n=Math.max(0,(dsNb.moyenne||0)-1);dsNb.moyenne=n;document.getElementById('dsn-m').textContent=n;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:16px;">-</button>
+              <span id="dsn-m" style="font-size:18px;font-weight:700;color:#1a3a1a;min-width:24px;text-align:center;">0</span>
+              <button onclick="dsNb.moyenne=(dsNb.moyenne||0)+1;document.getElementById('dsn-m').textContent=dsNb.moyenne;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:none;background:#1a3a1a;color:#c9a84c;cursor:pointer;font-size:16px;">+</button>
+            </div>
+          </div>
+          <div style="background:#f5f0e8;border:1px solid #e0d5c0;border-radius:8px;padding:.75rem;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#1a3a1a;margin-bottom:2px;">Grande — 40-60cm</div>
+            <div style="font-size:10px;color:#888;margin-bottom:.5rem;">60 min / souche</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+              <button onclick="var n=Math.max(0,(dsNb.grande||0)-1);dsNb.grande=n;document.getElementById('dsn-g').textContent=n;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:16px;">-</button>
+              <span id="dsn-g" style="font-size:18px;font-weight:700;color:#1a3a1a;min-width:24px;text-align:center;">0</span>
+              <button onclick="dsNb.grande=(dsNb.grande||0)+1;document.getElementById('dsn-g').textContent=dsNb.grande;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:none;background:#1a3a1a;color:#c9a84c;cursor:pointer;font-size:16px;">+</button>
+            </div>
+          </div>
+          <div style="background:#f5f0e8;border:1px solid #e0d5c0;border-radius:8px;padding:.75rem;text-align:center;">
+            <div style="font-size:12px;font-weight:600;color:#1a3a1a;margin-bottom:2px;">Très grande — +60cm</div>
+            <div style="font-size:10px;color:#888;margin-bottom:.5rem;">90 min / souche</div>
+            <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+              <button onclick="var n=Math.max(0,(dsNb.tresgrande||0)-1);dsNb.tresgrande=n;document.getElementById('dsn-tg').textContent=n;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-size:16px;">-</button>
+              <span id="dsn-tg" style="font-size:18px;font-weight:700;color:#1a3a1a;min-width:24px;text-align:center;">0</span>
+              <button onclick="dsNb.tresgrande=(dsNb.tresgrande||0)+1;document.getElementById('dsn-tg').textContent=dsNb.tresgrande;recalcCli('ds')" style="width:28px;height:28px;border-radius:50%;border:none;background:#1a3a1a;color:#c9a84c;cursor:pointer;font-size:16px;">+</button>
+            </div>
+          </div>
+        </div>
+        <div style="margin-bottom:.875rem;">
+        <label style="font-size:13px;color:#555;font-weight:500;margin-bottom:6px;display:block;">Localisation</label>
+        <div style="display:flex;gap:8px;margin-bottom:6px;">
+          <input type="text" id="cli-desouch-com" placeholder="Votre commune (ex: Ath, Namur...)" oninput="clearTimeout(window._distTimer);window._distTimer=setTimeout(function(){calcDistCli('ds');},800);"
+            style="flex:1;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <button onclick="calcDistCli('ds')"
+            style="background:#1a3a1a;color:#c9a84c;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;">
+            📍 Distance
+          </button>
+        </div>
+        <div id="cli-desouch-dist" style="font-size:12px;margin-bottom:6px;"></div>
+        
+      </div>
+      </div>
+      
+      <!-- RÉSULTAT -->
+      <div id="cli-result-ds" style="background:#1a3a1a;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:.875rem;">
+        <div class="cli-est-empty" style="color:#8ab08a;font-size:13px;">Complétez les informations ci-dessus</div>
+      </div>
+
+      <!-- CONTACT -->
+      <div style="background:#fff;border:1.5px solid #1a3a1a;border-radius:12px;padding:1rem;">
+        <div style="font-size:12px;font-weight:700;color:#1a3a1a;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.875rem;">Demander un devis précis</div>
+
+        <!-- Photos -->
+        <label style="display:block;border:2px dashed #1a3a1a;border-radius:8px;padding:.75rem;text-align:center;cursor:pointer;background:#f0f7f0;margin-bottom:.75rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a3a1a" stroke-width="1.5" style="display:block;margin:0 auto 4px;"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M8 7V5a1 1 0 011-1h6a1 1 0 011 1v2"/></svg>
+          <span style="font-size:12px;font-weight:600;color:#1a3a1a;">Ajouter des photos (optionnel)</span><br>
+          <span style="font-size:11px;color:#888;">Plusieurs angles recommandés</span>
+          <input type="file" accept="image/*" multiple style="display:none;" onchange="addPhotosCli('desouch',this)">
+        </label>
+        <div id="cli-desouch-photos" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:.75rem;"></div>
+
+        <!-- Coordonnées -->
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:.875rem;">
+          <input type="text" id="cli-desouch-nom" placeholder="Votre nom et prénom" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-desouch-tel" placeholder="Votre téléphone" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+          <input type="text" id="cli-desouch-periode" placeholder="Période souhaitée (ex: printemps 2025)" style="border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;">
+        </div>
+
+        <!-- Boutons envoi -->
+        <div style="font-size:11px;color:#3b6d11;background:#f0f7f0;border:1px solid #c3e6cb;border-radius:6px;padding:6px 10px;text-align:center;margin-bottom:8px;">
+          📱 GSM : WhatsApp ou Email &nbsp;|&nbsp; 💻 PC : Email uniquement
+        </div>
+        <button onclick="sendWACli('desouch')" class="btn-wa-gsm"
+          style="background:#25d366;color:#fff;border:none;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Envoyer par WhatsApp
+        </button>
+        <button onclick="sendEmailCli('desouch')"
+          style="background:#1a3a1a;color:#c9a84c;border:none;width:100%;padding:11px;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;">
+          &#128231; Envoyer par Email (avec photos)
+        </button>
+      </div>
+    </div>
+  </div>
+  <div style="display:none;" id="cli-stubs">
+<div id="g-engin" style="display:none;" data-v=""></div>
+<div id="g-caill" style="display:none;" data-v=""></div>
+<div id="g-evac" style="display:none;" data-v=""></div>
+<div id="cli-tc-tot" style="display:none;" data-v=""></div>
+<div id="cli-d-mach" style="display:none;" data-v=""></div>
+<div id="cli-d-charg-bloc" style="display:none;" data-v=""></div>
+<div id="cli-d-duree" style="display:none;" data-v=""></div>
+<div id="cli-dc-tot" style="display:none;" data-v=""></div>
+<div id="cli-bc-tot" style="display:none;" data-v=""></div>
+<div id="cli-hc-tot" style="display:none;" data-v=""></div>
+<div id="cli-dh-surf" style="display:none;" data-v=""></div>
+<div id="cli-dh-adv" style="display:none;" data-v=""></div>
+<div id="dh-pass-th" style="display:none;" data-v=""></div>
+<div id="dh-gaz" style="display:none;" data-v=""></div>
+<div id="cli-dh-res" style="display:none;" data-v=""></div>
+<div id="dh-prod" style="display:none;" data-v=""></div>
+<div id="dh-pass-ch" style="display:none;" data-v=""></div>
+<div id="cli-f-calc" style="display:none;" data-v=""></div>
+<div id="f-start" style="display:none;" data-v=""></div>
+<div id="cli-f-pass" style="display:none;" data-v=""></div>
+<div id="f-mat" style="display:none;" data-v=""></div>
+<div id="f-acces" style="display:none;" data-v=""></div>
+<div id="f-calc-info" style="display:none;" data-v=""></div>
+<div id="f-start-info" style="display:none;" data-v=""></div>
+<div id="cli-f-res" style="display:none;" data-v=""></div>
+<div id="cli-ds-res" style="display:none;" data-v=""></div>
+<div id="ds-evac" style="display:none;" data-v=""></div>
+<div id="ds-warn" style="display:none;" data-v=""></div>
+<div id="dh-pass-th" style="display:none;"><div class="op on" data-v="4"></div></div>
+<div id="dh-pass-ch" style="display:none;"><div class="op on" data-v="4"></div></div>
+<div id="dh-prod" style="display:none;"><div class="op on" data-v="roundup"></div></div>
+<div id="cli-d-mach" style="display:none;"><div class="op on" data-v="orion"></div></div>
+<div id="cli-f-pass" style="display:none;"><div class="op on" data-v="2"></div></div>
+<div id="cli-f-calc" style="display:none;"><div class="op on" data-v="calcaire"></div></div>
+
+  </div>
+</div>
+
+  </div>
+</section>
+<section id="apropos">
+  <div class="sl2">Qui sommes-nous</div>
+  <h2 class="st">Une entreprise <em>familiale</em> ancrée en Wallonie</h2>
+  <div class="ag">
+    <div class="ap reveal">
+      <img src="img17.jpg" alt="Équipe Ar.T.Event au travail dans un beau jardin">
+      <div class="apc">Bastien et l'équipe — entretien d'un domaine privé</div>
+    </div>
+    <div>
+      <div class="at">
+        <p><strong>Ar.T.Event & Fils</strong> est une entreprise familiale de paysagisme professionnel basée à <strong>Franière (Namur)</strong>. Nous intervenons sur tous types d'espaces extérieurs : jardins privés, zones d'activités, copropriétés, domaines communaux.</p>
+        <p>Notre force : une équipe terrain expérimentée, un parc machines complet (Orion sur chenilles, mini-pelle, gyrobroyeur, tracteur Iseki, nacelle), et une connaissance fine du terrain wallon. Nous travaillons aussi bien pour des particuliers que pour des <strong>communes, institutions publiques et marchés publics</strong>.</p>
+        <p>Titulaires de la <strong>phytolicence</strong>, nous appliquons les produits phytosanitaires dans le strict respect de la réglementation belge et wallonne. Nos réalisations couvrent des chantiers aussi variés que l'entretien d'éoliennes, la création de jardins haut de gamme, et la pose de terrasses bois.</p>
+        <div class="certs">
+          <span class="cb">✓ Phytolicence</span>
+          <span class="cb">✓ Agréé Wallonie</span>
+          <span class="cb">✓ Marchés publics</span>
+          <span class="cb">✓ RC Pro</span>
+          <span class="cb">✓ TVA BE</span>
+        </div>
+      </div>
+      <div class="avs" style="margin-top:32px;">
+        <div class="av"><div class="avi">🎯</div><div><div class="avt">Précision & Qualité</div><div class="avd">Chaque chantier est traité avec soin, du premier contact jusqu'aux finitions.</div></div></div>
+        <div class="av"><div class="avi">🤝</div><div><div class="avt">Relation de confiance</div><div class="avd">Nous privilégions les contrats d'entretien durables avec nos clients.</div></div></div>
+        <div class="av"><div class="avi">⚡</div><div><div class="avt">Réactivité</div><div class="avd">Interventions urgentes possibles. Réponse rapide à toute demande.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE -->
+<section id="zone">
+  <div class="sl2">Couverture géographique</div>
+  <h2 class="st">Notre <em>zone</em> d'intervention</h2>
+  <div class="zg">
+    <!-- CARTE SVG WALLONIE + BRUXELLES -->
+    <div class="zm">
+      <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;min-height:340px;">
+        <!-- FLANDRE (gris clair) -->
+        <path d="M60,30 L200,20 L280,25 L320,40 L340,60 L300,75 L260,70 L220,80 L180,75 L140,85 L100,80 L70,70 L50,55 Z" fill="#d8d8d0" stroke="#bbb" stroke-width="1"/>
+        <path d="M280,25 L380,30 L420,50 L400,70 L360,75 L340,60 Z" fill="#d8d8d0" stroke="#bbb" stroke-width="1"/>
+        <!-- BRUXELLES (doré) -->
+        <ellipse cx="238" cy="88" rx="16" ry="13" fill="#c9a84c" stroke="#a07830" stroke-width="1.5"/>
+        <text x="238" y="92" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="#fff" font-weight="600">BXL</text>
+        <!-- HAINAUT (vert moyen) -->
+        <path d="M50,55 L70,70 L100,80 L140,85 L180,75 L220,80 L238,100 L220,130 L190,150 L160,160 L120,155 L80,145 L50,130 L30,100 L35,75 Z" fill="#2d5a2d" stroke="#1a3a1a" stroke-width="1"/>
+        <text x="120" y="118" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="rgba(255,255,255,0.85)">Hainaut</text>
+        <!-- BRABANT WALLON (vert clair) -->
+        <path d="M180,75 L220,80 L238,100 L230,115 L210,120 L185,110 L175,95 Z" fill="#3d7a3d" stroke="#1a3a1a" stroke-width="1"/>
+        <text x="205" y="103" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7" fill="rgba(255,255,255,0.9)">Brab. W.</text>
+        <!-- NAMUR (vert foncé - zone principale) -->
+        <path d="M210,120 L230,115 L238,100 L255,105 L280,110 L300,130 L310,160 L290,185 L260,195 L230,190 L205,175 L190,155 L190,135 Z" fill="#1a3a1a" stroke="#0d2010" stroke-width="1.5"/>
+        <text x="252" y="152" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="rgba(255,255,255,0.9)" font-weight="600">Namur</text>
+        <!-- LIEGE (vert moyen) -->
+        <path d="M280,110 L340,60 L360,75 L400,70 L420,50 L440,80 L450,120 L430,150 L400,165 L370,170 L340,160 L310,160 L300,130 Z" fill="#2d5a2d" stroke="#1a3a1a" stroke-width="1"/>
+        <text x="375" y="120" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="rgba(255,255,255,0.85)">Liège</text>
+        <!-- LUXEMBOURG (vert intermédiaire) -->
+        <path d="M205,175 L230,190 L260,195 L290,185 L310,160 L340,160 L370,170 L380,210 L360,260 L320,300 L270,310 L230,295 L200,265 L185,230 L190,200 Z" fill="#254a25" stroke="#1a3a1a" stroke-width="1"/>
+        <text x="285" y="245" text-anchor="middle" font-family="Outfit,sans-serif" font-size="9" fill="rgba(255,255,255,0.85)">Luxembourg</text>
+        <!-- POINT FRANIERE -->
+        <circle cx="248" cy="138" r="7" fill="#e84c4c" stroke="#fff" stroke-width="2"/>
+        <circle cx="248" cy="138" r="3" fill="#fff"/>
+        <!-- Label Franière -->
+        <rect x="255" y="128" width="58" height="16" rx="3" fill="rgba(26,58,26,0.9)"/>
+        <text x="284" y="139" text-anchor="middle" font-family="Outfit,sans-serif" font-size="7.5" fill="#c9a84c" font-weight="600">📍 Franière</text>
+        <!-- TOURNAI (point) -->
+        <circle cx="55" cy="105" r="3" fill="rgba(255,255,255,0.6)" stroke="#fff" stroke-width="1"/>
+        <text x="55" y="98" text-anchor="middle" font-family="Outfit,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.7)">Tournai</text>
+        <!-- LIEGE ville -->
+        <circle cx="400" cy="110" r="3" fill="rgba(255,255,255,0.6)" stroke="#fff" stroke-width="1"/>
+        <text x="415" y="107" text-anchor="middle" font-family="Outfit,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.7)">Liège</text>
+        <!-- ARLON -->
+        <circle cx="340" cy="280" r="3" fill="rgba(255,255,255,0.6)" stroke="#fff" stroke-width="1"/>
+        <text x="340" y="273" text-anchor="middle" font-family="Outfit,sans-serif" font-size="6.5" fill="rgba(255,255,255,0.7)">Arlon</text>
+        <!-- Légende -->
+        <rect x="15" y="300" width="140" height="70" rx="4" fill="rgba(26,58,26,0.85)"/>
+        <rect x="22" y="310" width="10" height="10" rx="2" fill="#1a3a1a" stroke="#c9a84c" stroke-width="1"/>
+        <text x="38" y="319" font-family="Outfit,sans-serif" font-size="7.5" fill="#c9a84c">Zone principale</text>
+        <rect x="22" y="325" width="10" height="10" rx="2" fill="#2d5a2d"/>
+        <text x="38" y="334" font-family="Outfit,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.8)">Zone étendue</text>
+        <ellipse cx="27" cy="346" rx="5" ry="4" fill="#c9a84c"/>
+        <text x="38" y="349" font-family="Outfit,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.8)">Bruxelles-Capitale</text>
+        <circle cx="27" cy="360" r="4" fill="#e84c4c" stroke="#fff" stroke-width="1.2"/>
+        <text x="38" y="364" font-family="Outfit,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.8)">Notre base — Franière</text>
+      </svg>
+    </div>
+    <!-- TEXTE DROITE -->
+    <div>
+      <p style="color:#555;line-height:1.85;font-weight:300;margin-bottom:28px;font-size:.96rem;">Nous intervenons sur <strong style="color:var(--vert)">l'ensemble du territoire wallon</strong>, de Tournai à Liège et jusqu'en province du Luxembourg, ainsi qu'en <strong style="color:var(--vert)">Région de Bruxelles-Capitale</strong>.</p>
+      <!-- Zones -->
+      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:14px;background:#f0f5f0;border-left:3px solid #1a3a1a;padding:14px 16px;border-radius:0 3px 3px 0;">
+          <div style="width:14px;height:14px;background:#1a3a1a;border-radius:2px;flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:.78rem;color:var(--or);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Zone principale</div>
+            <div style="font-size:.9rem;color:#333;font-weight:500;">Province de Namur · Brabant Wallon</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;background:#f5f8f5;border-left:3px solid #2d5a2d;padding:14px 16px;border-radius:0 3px 3px 0;">
+          <div style="width:14px;height:14px;background:#2d5a2d;border-radius:2px;flex-shrink:0;"></div>
+          <div>
+            <div style="font-size:.78rem;color:var(--or);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;">Zone étendue</div>
+            <div style="font-size:.9rem;color:#333;font-weight:500;">Hainaut · Liège · Luxembourg · Bruxelles-Capitale</div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--orp);border-left:3px solid var(--or);padding:14px 18px;border-radius:0 3px 3px 0;font-size:.85rem;color:var(--vert);line-height:1.7;">
+        <strong>Votre projet est ailleurs ?</strong> Contactez-nous — nous étudions toute demande selon la nature et le volume du chantier. Aucune liste ne peut résumer notre couverture.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sl2">Nous joindre</div>
+  <h2 class="st">Parlons de <em>votre projet</em></h2>
+  <div class="cog">
+    <div class="coi">
+      <div class="coit"><div class="coic">📞</div><div><div class="coilab">Téléphone</div><div class="coiv">0495/26.74.96</div><div class="coisub">Du lundi au vendredi, 7h–18h</div></div></div>
+      <div class="coit"><div class="coic">📧</div><div><div class="coilab">Email</div><div class="coiv">ar.t.event@skynet.be</div><div class="coisub">Réponse sous 24h</div></div></div>
+      <div class="coit"><div class="coic">📍</div><div><div class="coilab">Adresse</div><div class="coiv">Rue du Calvaire 38</div><div class="coisub">5150 Franière (Namur), Belgique</div></div></div>
+      <a href="https://wa.me/32495267496" target="_blank" class="wa"><span style="font-size:1.25rem">💬</span> Contacter sur WhatsApp</a>
+    </div>
+    <div class="cof">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--vert);margin-bottom:22px;">Envoyez-nous un message</h3>
+      <div class="fr" style="margin-bottom:0">
+        <div class="fg"><label>Nom complet</label><input type="text" placeholder="Votre nom"></div>
+        <div class="fg"><label>Téléphone</label><input type="tel" placeholder="04XX/XX XX XX"></div>
+      </div>
+      <div class="fg"><label>Email</label><input type="email" placeholder="votre@email.be"></div>
+      <div class="fg"><label>Sujet</label><select><option>Demande de devis</option><option>Renseignements</option><option>Contrat d'entretien</option><option>Marché public</option><option>Autre</option></select></div>
+      <div class="fg"><label>Message</label><textarea rows="4" placeholder="Décrivez votre projet ou votre demande..."></textarea></div>
+      <button class="bf" onclick="this.textContent='✓ Message envoyé !';this.style.background='#2d7a2d';this.disabled=true;">Envoyer le message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg2">
+    <div>
+      <div class="fb">[Ar.T.Event] <span>& Fils</span></div>
+      <p class="fd">Paysagiste professionnel en Wallonie et Bruxelles. Entretien, création et aménagement d'espaces verts pour particuliers, entreprises et collectivités.</p>
+    </div>
+    <div>
+      <div class="ft2">Navigation</div>
+      <ul class="fl">
+        <li><a href="#services">Nos services</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#zone">Zone d'intervention</a></li>
+        <li><a href="#devis">Devis gratuit</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft2">Contact</div>
+      <ul class="fl">
+        <li><a href="tel:0495267496">0495/26.74.96</a></li>
+        <li><a href="mailto:ar.t.event@skynet.be">ar.t.event@skynet.be</a></li>
+        <li><a href="#">Franière (Namur)</a></li>
+        <li><a href="https://wa.me/32495267496" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 Ar.T.Event & Fils — Tous droits réservés</span>
+    <span>TVA BE · Phytolicence · Agréé Wallonie</span>
+  </div>
+</footer>
+
+<script>
+function toggleMob(){
+  var m=document.getElementById('mob');
+  m.style.display=m.style.display==='none'||m.style.display===''?'block':'none';
+}
+window.addEventListener('scroll',function(){
+  document.getElementById('nb').style.boxShadow=window.scrollY>50?'0 4px 20px rgba(0,0,0,.3)':'none';
+});
+var svcs=[];
+function togSvc(el,n){
+  el.classList.toggle('sel');
+  svcs=svcs.includes(n)?svcs.filter(s=>s!==n):[...svcs,n];
+}
+var cur=1;
+function go(s){
+  if(s===2&&svcs.length===0){alert('Veuillez sélectionner au moins un service.');return;}
+  document.getElementById('step'+cur).classList.remove('active');
+  if(cur<=3)document.getElementById('d'+cur).classList.remove('active');
+  cur=s;
+  var el=s===0?null:document.getElementById(s===4?'stepOK':'step'+s);
+  if(el)el.classList.add('active');
+  for(var i=1;i<=3;i++){var d=document.getElementById('d'+i);if(d)d.classList[i<=s?'add':'remove']('active');}
+}
+function subDevis(){
+  var n=document.getElementById('nom').value,t=document.getElementById('tel').value;
+  if(!n||!t){alert('Veuillez renseigner votre nom et téléphone.');return;}
+  document.getElementById('step3').classList.remove('active');
+  document.getElementById('stepOK').classList.add('active');
+  for(var i=1;i<=3;i++){var d=document.getElementById('d'+i);if(d)d.classList.add('active');}
+}
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
+</script>
+
+<script>
+var DIST={'amay':55,'andenne':30,'anderlecht':77,'anhee':20,'ans':79,'anthisnes':71,'antoing':129,'arlon':148,'assesse':21,'ath':101,'attert':139,'aubange':159,'auderghem':67,'awans':75,'aywaille':85,'bassenge':93,'bastogne':109,'beaumont':59,'beauraing':48,'beez':14,'beloeil':102,'berchem':73,'bernissart':109,'bertrix':96,'beyne-heusay':92,'bievre':73,'binche':59,'blegny':101,'bouillon':98,'boussu':94,'braine-l-alleud':55,'braine-le-comte':68,'braives':45,'brugelette':92,'bruxelles':77,'burdinne':38,'chapelle-lez-herlaimont':49,'charleroi':32,'chastre':29,'chatelet':26,'chaumont-gistoux':38,'chievres':97,'chimay':71,'chiny':116,'ciney':35,'clavier':54,'courcelles':41,'court-st-etienne':39,'couvin':61,'crisnee':65,'dinant':26,'doische':42,'dour':97,'durbuy':65,'eghezee':29,'enghien':83,'engis':64,'erezee':79,'erquelinnes':66,'esneux':77,'estinnes':64,'etalle':136,'etterbeek':73,'eupen':124,'evere':79,'faimes':56,'fernelmont':26,'fleron':93,'fleurus':24,'flone':58,'floreffe':3,'florennes':31,'florenville':120,'floriffoux':3,'fontaine-l-eveque':44,'forest':72,'fosses':10,'frameries':84,'franiere':0,'frasnes':121,'ganshoren':84,'gedinne':67,'gembloux':24,'genappe':40,'gerpinnes':27,'gesves':27,'gouvy':116,'grace-hollogne':75,'grimbergen':87,'grâce':75,'grâce-berleur':74,'habay':133,'ham-sur-heure':42,'hamois':35,'hannut':48,'hastiere':30,'havelange':43,'helecine':51,'herstal':89,'herve':101,'hoeilaart':58,'hotton':68,'houffalize':105,'huy':46,'incourt':38,'ixelles':72,'jambes':10,'jemeppe-sur-sambre':15,'jette':83,'jodoigne':46,'juprelle':85,'jurbise':85,'koekelberg':80,'kraainem':75,'la-bruyere':15,'la-louviere':58,'la-roche':83,'laeken':81,'lasne':42,'leglise':119,'lens':87,'lessines':101,'leuze':115,'libramont':93,'liege':83,'lierneux':98,'lincent':42,'lobbes':51,'malmedy':119,'manage':54,'manhay':96,'marche':61,'marche-en-famenne':61,'messancy':159,'mettet':18,'modave':51,'molenbeek':79,'mons':79,'mont-saint-guibert':34,'morlanwelz':52,'mouscron':158,'musson':159,'namur':11,'nandrin':62,'nassogne':69,'neufchateau':106,'neupre':72,'nivelles':51,'ohey':32,'onhaye':25,'orp':42,'ottignies':43,'ouffet':66,'oupeye':92,'overijse':57,'pecq':139,'pepinster':101,'peruwelz':114,'perwez':30,'philippeville':40,'pont-a-celles':43,'pontins':12,'profondeville':10,'quaregnon':87,'quievrain':105,'ramillies':34,'remicourt':63,'rendeux':74,'rixensart':49,'rochefort':57,'saint-georges':58,'saint-hubert':82,'sambreville':17,'schaerbeek':78,'seneffe':52,'seraing':74,'silly':89,'sint-pieters-leeuw':76,'soignies':72,'sombreffe':23,'spa':104,'sprimont':85,'stavelot':110,'sterrebeek':76,'tellin':66,'tervuren':65,'thimister':113,'thuin':49,'tinlot':61,'tintigny':131,'tournai':136,'tourneppe':61,'trois-ponts':104,'tubize':69,'uccle':69,'verlaine':47,'verviers':106,'vielsalm':110,'villers-la-ville':35,'vilvoorde':85,'viroinval':59,'virton':147,'visé':99,'vresse':81,'walcourt':41,'walhain':24,'wanze':38,'waremme':62,'waterloo':59,'watermael':65,'wavre':48,'wellin':59,'wepion':7,'wezembeek':71,'woluwe':71,'yvoir':16,'zaventem':79};
+
+// ============================================================
+// CALCULS ARTEVENT - BASE DOCUMENT FOURNI + CORRECTIONS
+// Version recalibrée complète
+// ============================================================
+
+var TAUX = 37.5;   // moyenne 35-40€/h
+var MOMIN = 60;    // minimum intervention
+var MARGE = 0.40;  // 40% marge standard
+
+// Coûts véhicule €/km — simplifié (astuce pro)
+var CKM_LEGER    = 1.10;  // véhicule léger sans remorque
+var CKM_REMORQUE = 1.50;  // véhicule avec remorque
+
+// Alias pour compatibilité
+var CKM_CRAFTER      = CKM_LEGER;
+var CKM_CRAFTER_REM8  = CKM_REMORQUE;
+var CKM_CRAFTER_REMPL = CKM_REMORQUE;
+var CKM_GAZON         = CKM_REMORQUE;  // 2 véhicules -> forfait remorque × 2
+var CKM_RANGER        = CKM_LEGER;
+
+// Variables surface
+var gSurf=200, tSurf=1000, dSurf=500, bSurf=50, hSurf=50;
+var dhSurf=200, fSurf=500;
+var dsNb={petite:0,moyenne:0,grande:0,tresgrande:0};
+var dhMeth="thermique", gType="semis", gMethode="tracteur";
+var cliAvecBordures=false;
+var KM={g:0,t:0,d:0,b:0,h:0,dh:0,f:0,ds:0};
+
+// Prix déchets: 100€/tonne = 0.10€/kg
+var PRIX_DECHETS_KG = 0.10;
+
+// Produits fertilisation
+var PRIX_CHAUX    = 19.95;  // /sac 20kg, 20kg/are = 1sac/100m²
+var PRIX_ENGRAIS  = 61.99;  // /sac 25kg, 4kg/are  = 1sac/625m²
+var PRIX_SEMENCES = 180;    // /sac 15kg, 4kg/are
+var PRIX_CHAUX_G  = 19.95;  // pour gazon 4kg/are
+var PRIX_COPERON  = 30;     // /sac 25kg, 4kg/are
+var PRIX_ENGRAIS_G = 44.92; // /sac 20kg, 4kg/are
+var PRIX_ROULEAU  = 4.50;   // €/m²
+
+function dep(km, ckm) { return Math.round(ckm * km * 2); }
+function mo(h) { return Math.max(MOMIN, Math.ceil(h) * TAUX); }
+function sacsSup(besoin, sac) { return Math.ceil(besoin/sac); }
+function prixVente(rev, minF, marge) {
+  marge = marge || MARGE; minF = minF || 60;
+  var pv = Math.max(minF, Math.round(rev*(1+marge)));
+  return {lo: Math.max(minF, Math.round(pv*0.85)), hi: Math.round(pv*1.20)};
+}
+
+// ============================================================
+// TONTE
+// ============================================================
+function calcTonteCli() {
+  var hEl=document.getElementById("cli-t-haut"), hv="norm";
+  if(hEl&&hEl.querySelector(".op.on")) hv=hEl.querySelector(".op.on").dataset.v;
+  var mEl=document.getElementById("cli-t-mode"), mv="mulching";
+  if(mEl&&mEl.querySelector(".op.on")) mv=mEl.querySelector(".op.on").dataset.v;
+  var fEl=document.getElementById("cli-t-freq"), fv="7-10";
+  if(fEl&&fEl.querySelector(".op.on")) fv=fEl.querySelector(".op.on").dataset.v;
+  var aEl=document.getElementById("cli-t-acces"), acces="large";
+  if(aEl&&aEl.querySelector(".op.on")) acces=aEl.querySelector(".op.on").dataset.v;
+
+  // Accès: détermine machine + véhicule + rendement
+  // ≥130cm -> SXG19 + Crafter/remorque | <130cm -> tondeuse + Crafter seul
+  var sgx19 = acces === "large";
+  var ckm = sgx19 ? CKM_CRAFTER_REM8 : CKM_CRAFTER;  // 0.74 vs 0.63
+
+  // Prix base €/m² selon hauteur + mode
+  // SXG19: rendement élevé -> prix bas | Tondeuse: rendement faible -> prix élevé
+  var BASE_SGX = {
+    "norm-mulching":  0.18, "norm-ramassage":  0.20,   // 5-10cm entretien
+    "h10-mulching":   0.15, "h10-ramassage":   0.25,   // 10-20cm 2-3 semaines
+    "h20-mulching":   0.22, "h20-ramassage":   0.30,   // 20-40cm 1 mois
+    "h40-mulching":   0.32, "h40-ramassage":   0.40,   // 40-60cm plusieurs mois (+coeff)
+    "h60-mulching":   0.45, "h60-ramassage":   0.53,   // 60-80cm abandon partiel
+    "h80-mulching":   0.55, "h80-ramassage":   0.58    // 80-100cm abandon total
+  };
+  // Tondeuse poussée: +40% sur le prix (rendement 5x plus lent)
+  var BASE_TON = {};
+  for(var k in BASE_SGX) BASE_TON[k] = Math.round(BASE_SGX[k] * 1.40 * 100)/100;
+
+  var BASE = sgx19 ? BASE_SGX : BASE_TON;
+  var FREQ = {"7-10":1.0,"2sem":1.25,"3sem":1.55,"mensuel":1.90,"abandon":2.40};
+  var modeCoeff = mv==="ramassage" ? 1.30 : 1.0;
+
+  var base = BASE[hv+"-"+mv] || (sgx19 ? 0.18 : 0.25);
+  var fc = FREQ[fv] || 1.0;
+  var prixM2 = base * fc * modeCoeff;
+
+  var cTravail = Math.round(tSurf * prixM2);
+  var cDep = dep(KM.t, ckm);
+  var rev = cTravail + cDep;
+
+  // Minimum selon machine
+  var minF = sgx19 ? 80 : 60;
+  showResultCli("t", rev, MARGE, minF);
+}
+
+// ============================================================
+// BORDURES
+// ============================================================
+function calcBorduresCli() {
+  var eEl=document.getElementById("cli-b-etat"), ev="simple";
+  if(eEl&&eEl.querySelector(".op.on")) ev=eEl.querySelector(".op.on").dataset.v;
+
+  // Base: 50ml entretien = 20€ prix de vente -> 0.40€/ml
+  // Règle de 3 pour les autres états
+  // Prix de vente DIRECT (marge déjà intégrée dans €/ml)
+  var PRIX_ML = {
+    "simple": 0.40,  // 50ml = 20€
+    "norm":   0.60,  // 50ml = 30€
+    "haut":   0.80,  // 50ml = 40€
+    "env":    1.00,  // 50ml = 50€
+    "clot":   1.20   // 50ml = 60€
+  };
+  var prixMl = PRIX_ML[ev] || 0.40;
+  var cTravail = Math.round(bSurf * prixMl);
+  // Pas de déplacement - déjà inclus dans la tonte
+  var total = cTravail;
+  var lo = Math.round(total * 0.85);
+  var hi = Math.round(total * 1.15);
+  var el = document.getElementById("cli-result-b");
+  if(!el) return;
+  if(total <= 0) { el.innerHTML = "<div class=\"cli-est-empty\">Indiquez la longueur</div>"; return; }
+  el.innerHTML = "<div class=\"cli-est-label\">Supplément bordures</div>"
+    + "<div class=\"cli-est-price\">entre "+lo+"€ et "+hi+"€</div>";
+}
+
+// ============================================================
+// DÉBROUSSAILLAGE
+// Machine auto selon végétation + véhicule associé
+// ============================================================
+function calcDebrouCli() {
+  var vEl=document.getElementById("cli-d-veg"), veg="herbe";
+  if(vEl&&vEl.querySelector(".op.on")) veg=vEl.querySelector(".op.on").dataset.v;
+
+  // (prix_min, prix_max, ckm_vehicule, minF)
+  var CONF = {
+    "herbe":   [0.35, 0.40, CKM_CRAFTER_REM8, 120],
+    "herbe2":  [0.40, 0.45, CKM_CRAFTER_REM8, 120],
+    "orties":  [0.50, 0.55, CKM_CRAFTER_REMPL, 150],
+    "ronces1": [0.70, 0.80, CKM_CRAFTER,        150],
+    "ronces2": [0.90, 1.10, CKM_CRAFTER_REMPL,  180],
+    "ligneux": [1.50, 1.70, CKM_CRAFTER_REMPL,  180]
+  };
+  var c = CONF[veg] || CONF["herbe"];
+  var prixMoy = (c[0]+c[1])/2;
+  var cTravail = Math.round(dSurf * prixMoy);
+  var cDep = dep(KM.d, c[2]);
+  var rev = cTravail + cDep;
+  showResultCli("d", rev, MARGE, c[3]);
+}
+
+// ============================================================
+// HAIES
+// Base €/ml × coeff hauteur × coeff faces + déchets + transport
+// ============================================================
+function calcHaiesCli() {
+  var hEl=document.getElementById("cli-h-haut"), hv="h12";
+  if(hEl&&hEl.querySelector(".op.on")) hv=hEl.querySelector(".op.on").dataset.v;
+  var fEl=document.getElementById("cli-h-faces"), fv="3";
+  if(fEl&&fEl.querySelector(".op.on")) fv=fEl.querySelector(".op.on").dataset.v;
+  var eEl=document.getElementById("cli-h-etat"), ev="reg";
+  if(eEl&&eEl.querySelector(".op.on")) ev=eEl.querySelector(".op.on").dataset.v;
+
+  // Base €/ml 1 face selon état
+  var BASE_ML = {"reg":1.50,"dense":2.20,"rabat":3.50,"rabat2":5.50};
+  // Hauteur coefficients
+  var CH = {"h12":1.0,"h15":1.0,"h25":1.3,"h35":1.6,"hpl":2.25};
+  // Faces coefficients
+  var CF = {"1":1.0,"2":1.6,"3":2.1};
+  // Poids déchets kg/m
+  var KG_ML = {"reg":1.5,"dense":4.0,"rabat":12.5,"rabat2":25.0};
+
+  var base = BASE_ML[ev] || 2.20;
+  var ch = CH[hv] || 1.0;
+  var cf = CF[fv] || 2.1;
+  var cout_taille = base * ch * cf;
+  var cout_dechets = (KG_ML[ev]||4.0) * PRIX_DECHETS_KG;
+  var cout_transp_fixe = 0.50;
+  var cout_transp_km = hSurf > 0 ? dep(KM.h, CKM_CRAFTER_REM8) / hSurf : 0;
+  var rev_ml = cout_taille + cout_dechets + cout_transp_fixe + cout_transp_km;
+  var rev = Math.round(rev_ml * hSurf);
+  showResultCli("h", rev, MARGE, 120);
+}
+
+// ============================================================
+// FERTILISATION
+// Sacs complets + MO arrondie heure supérieure
+// ============================================================
+function calcFertiCli() {
+  var avecChaux = document.getElementById("cli-f-calcaire") &&
+                  document.getElementById("cli-f-calcaire").checked;
+  var avecEngrais = document.getElementById("cli-f-startpro") &&
+                    document.getElementById("cli-f-startpro").checked;
+
+  var ares = fSurf / 100;
+  var cout_prod = 0;
+  if(avecChaux)   cout_prod += sacsSup(ares, 1) * PRIX_CHAUX;    // 1sac/are
+  if(avecEngrais) cout_prod += sacsSup(ares, 6.25) * PRIX_ENGRAIS; // 1sac/6.25ares
+
+  // MO arrondie heure supérieure, minimum 1h
+  var h_reel = fSurf / 1000;  // rendement 1000m²/h
+  var cout_mo = Math.max(TAUX, Math.ceil(h_reel) * TAUX);
+  var cDep = dep(KM.f, CKM_CRAFTER);
+  var rev = Math.round(cout_prod + cout_mo + cDep);
+  showResultCli("f", rev, MARGE, 80);
+}
+
+// ============================================================
+// DÉSHERBAGE
+// Thermique: 0.50-0.70€/m², Chimique Bofix: 0.40€/m²
+// ============================================================
+function calcDesherbCli() {
+  var mEl=document.getElementById("cli-dh-meth"), mv="thermique";
+  if(mEl&&mEl.querySelector(".op.on")) mv=mEl.querySelector(".op.on").dataset.v;
+
+  var PRIX = {"thermique":0.60,"chimique":0.45};
+  var prixM2 = PRIX[mv] || 0.60;
+  var cTravail = Math.round(dhSurf * prixM2);
+  var cDep = dep(KM.dh, CKM_CRAFTER);
+  var rev = cTravail + cDep;
+  showResultCli("dh", rev, MARGE, 80);
+}
+
+// ============================================================
+// GAZON CRÉATION
+// Semis ou rouleaux - sacs complets - 2 véhicules
+// ============================================================
+function calcGazonCli() {
+  var ares = gSurf / 100;
+  var eEl=document.getElementById("cli-g-etat"), etv="nu";
+  if(eEl&&eEl.querySelector(".op.on")) etv=eEl.querySelector(".op.on").dataset.v;
+
+  var methode = gMethode || "tracteur";
+  // Déplacement selon méthode:
+  // Barreto (<=300m²): 1 véhicule + remorque = 1.50€/km
+  // Tracteur/Rotadairon: 2 véhicules avec remorques = 3.00€/km
+  var cDep = (methode === "barreto" || gSurf <= 300)
+    ? dep(KM.g, CKM_REMORQUE)       // 1 véhicule + remorque
+    : dep(KM.g, CKM_REMORQUE) * 2;  // 2 véhicules + remorques
+
+  if(gType === "rouleaux") {
+    // Gazon en rouleaux
+    var cout_gazon = Math.round(gSurf * PRIX_ROULEAU);
+    var sacs_chaux = sacsSup(ares*4, 20);  // 4kg/are, sac 20kg
+    var sacs_cop   = sacsSup(ares*4, 25);
+    var sacs_eng   = sacsSup(ares*4, 20);
+    var cout_prod = cout_gazon + sacs_chaux*PRIX_CHAUX_G + sacs_cop*PRIX_COPERON + sacs_eng*PRIX_ENGRAIS_G + 8;
+    var h_mo = methode==="barreto" ? 8 : 8;
+    var cout_mach = methode==="barreto" ? 230 : 430;  // Barreto+Eliet ou Tracteur+Eliet
+    var cout_mo = h_mo * TAUX;
+    var rev = Math.round(cout_prod + cout_mo + cout_mach + cDep);
+    showResultCli("g", rev, MARGE, 800);
+
+  } else {
+    // Gazon semé
+    var sacs_sem   = sacsSup(ares*4, 15);  // 4kg/are, sac 15kg
+    var sacs_chaux2 = sacsSup(ares*4, 20);
+    var sacs_cop2  = sacsSup(ares*4, 25);
+    var sacs_eng2  = sacsSup(ares*4, 20);
+    var cout_prod2 = sacs_sem*PRIX_SEMENCES + sacs_chaux2*PRIX_CHAUX_G +
+                     sacs_cop2*PRIX_COPERON + sacs_eng2*PRIX_ENGRAIS_G + 8;
+    var prepCoeff = {nu:1.0, rase:1.15, haute:1.35, envahi:1.60}[etv] || 1.0;
+    var h_mo2, cout_mach2;
+    if(methode==="barreto") {
+      h_mo2 = Math.ceil(8 * prepCoeff); cout_mach2 = 300;
+    } else if(methode==="rotadairon") {
+      h_mo2 = Math.ceil(6 * prepCoeff); cout_mach2 = 425;
+    } else {
+      h_mo2 = Math.ceil(8 * prepCoeff); cout_mach2 = 390;
+    }
+    var cout_mo2 = h_mo2 * TAUX;
+    var rev2 = Math.round(cout_prod2 + cout_mo2 + cout_mach2 + cDep);
+    showResultCli("g", rev2, MARGE, 600);
+  }
+}
+
+// ============================================================
+// DESSOUCHAGE
+// ============================================================
+function calcDesouchCli() {
+  var TEMPS_MIN = {petite:15, moyenne:30, grande:60, tresgrande:90};
+  var total_min = 0;
+  for(var t in dsNb) total_min += (dsNb[t]||0) * (TEMPS_MIN[t]||30);
+  if(total_min === 0) { showResultCli("ds",0,MARGE,0); return; }
+  var h_reel = total_min/60;
+  var cout_mo = Math.ceil(h_reel) * TAUX;
+  // Location défonceuse: 250€/jour
+  var cout_mach = Math.ceil(h_reel/4) * 250;
+  var cDep = dep(KM.ds, CKM_CRAFTER);
+  var rev = Math.round(cout_mo + cout_mach + cDep);
+  showResultCli("ds", rev, MARGE, 120);
+}
+
+// ============================================================
+// RECALCUL UNIFIÉ
+// ============================================================
+function recalcCli(pfx) {
+  try {
+    if(pfx==="g")  calcGazonCli();
+    else if(pfx==="t")  { calcTonteCli(); if(cliAvecBordures) calcBorduresCli(); }
+    else if(pfx==="d")  calcDebrouCli();
+    else if(pfx==="b")  calcBorduresCli();
+    else if(pfx==="h")  calcHaiesCli();
+    else if(pfx==="dh") calcDesherbCli();
+    else if(pfx==="f")  calcFertiCli();
+    else if(pfx==="ds") calcDesouchCli();
+  } catch(e){ console.warn("recalcCli("+pfx+"):", e.message); }
+}
+
+
+function showResultCli(pfx, rev, marge, minF) {
+  // marge est en décimal (ex: 0.40 = 40%)
+  var pv = Math.max(minF||0, Math.round(rev*(1+marge)));
+  var lo = Math.max(minF||0, Math.round(pv*0.85));
+  var hi = Math.round(pv*1.20);
+  var el = document.getElementById("cli-result-"+pfx);
+  if(!el) return;
+  if(rev <= 0) {
+    el.innerHTML = "<div class=\"cli-est-empty\">Complétez les informations ci-dessus</div>";
+    return;
+  }
+  el.innerHTML = "<div class=\"cli-est-label\">Estimation indicative</div>"
+    + "<div class=\"cli-est-price\">entre "+lo+"€ et "+hi+"€</div>"
+    + "<div class=\"cli-est-note\">Non contractuelle — confirmation après visite gratuite</div>";
+}
+
+function calcDistCli(pfx) {
+  var pageName = {g:"gazon",t:"tonte",d:"debrou",b:"bordures",h:"haies",dh:"desherb",f:"ferti",ds:"desouch"}[pfx]||pfx;
+  var inp = document.getElementById("cli-"+pageName+"-com");
+  var commune = inp ? inp.value.trim() : "";
+  if(!commune) return;
+  var distEl = document.getElementById("cli-"+pageName+"-dist");
+  if(distEl) distEl.innerHTML = "<span style=\"color:#8ab08a;font-size:12px;\">Recherche...</span>";
+  
+  var c = commune.toLowerCase().replace(/[àáâ]/g,"a").replace(/[éèêë]/g,"e").replace(/[îï]/g,"i").replace(/[ôö]/g,"o").replace(/[ùûü]/g,"u");
+  var d = null;
+  if(DIST[c] !== undefined) { d = DIST[c]; }
+  if(d===null) for(var k in DIST){ if(k===c||k.startsWith(c)||c.startsWith(k)){d=DIST[k];break;} }
+  if(d===null) for(var k in DIST){ if(k.indexOf(c)>-1||c.indexOf(k)>-1){d=DIST[k];break;} }
+  
+  var setDist = function(dist, nom) {
+    KM[pfx] = dist;
+    // Option 2: afficher seulement la commune, pas les km
+    var txt = dist===0 
+      ? "<span style=\"color:#3b6d11;font-size:12px;\">✓ Commune reconnue — chantier local</span>"
+      : "<span style=\"color:#3b6d11;font-size:12px;\">✓ "+(nom||commune)+" reconnu — déplacement inclus dans l\'estimation</span>";
+    if(distEl) distEl.innerHTML = txt;
+    recalcCli(pfx);
+  };
+  
+  if(d !== null) { setDist(d, commune); return; }
+  
+  // Nominatim fallback
+  fetch("https://nominatim.openstreetmap.org/search?q="+encodeURIComponent(commune+", Belgique")+"&format=json&limit=1&countrycodes=be",
+    {headers:{"Accept-Language":"fr"}})
+    .then(function(r){return r.json();})
+    .then(function(data){
+      if(!data||!data.length){ if(distEl) distEl.innerHTML="<span style=\"color:#854f0b;font-size:12px;\">Non trouvée — saisissez les km manuellement</span>"; return; }
+      var lat=parseFloat(data[0].lat),lng=parseFloat(data[0].lon);
+      var R=6371,dLat=(lat-FRANIERE_LAT)*Math.PI/180,dLng=(lng-FRANIERE_LNG)*Math.PI/180;
+      var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(FRANIERE_LAT*Math.PI/180)*Math.cos(lat*Math.PI/180)*Math.sin(dLng/2)*Math.sin(dLng/2);
+      var dist=Math.round(R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a))*1.35);
+      DIST[c]=dist;
+      setDist(dist, data[0].display_name.split(",")[0]);
+    })
+    .catch(function(){ if(distEl) distEl.innerHTML="<span style=\"color:#854f0b;font-size:12px;\">Erreur réseau — saisissez les km</span>"; });
+}
+
+function outilPage(id) {
+  document.querySelectorAll(".opage").forEach(function(p){ p.style.display="none"; });
+  document.querySelectorAll(".onb").forEach(function(b){ b.classList.remove("on"); });
+  var pg = document.getElementById("opg-"+id);
+  if(pg) pg.style.display = "block";
+  var btns = document.querySelectorAll(".onb");
+  var map = {gazon:0,tonte:1,debrou:2,haies:3,desherb:4,ferti:5,desouch:6};
+  if(typeof map[id]!=="undefined" && btns[map[id]]) btns[map[id]].classList.add("on");
+  var pfxMap = {gazon:"g",tonte:"t",debrou:"d",haies:"h",desherb:"dh",ferti:"f",desouch:"ds"};
+  if(pfxMap[id]) setTimeout(function(){ recalcCli(pfxMap[id]); }, 100);
+}
+
+function toggleBorduresCli() {
+  cliAvecBordures = !cliAvecBordures;
+  var sec = document.getElementById("cli-bord-section");
+  var tog = document.getElementById("cli-bord-toggle");
+  var knob = document.getElementById("cli-bord-knob");
+  if(sec) sec.style.display = cliAvecBordures ? "block" : "none";
+  if(tog) tog.style.background = cliAvecBordures ? "#1a3a1a" : "#ddd";
+  if(knob) knob.style.left = cliAvecBordures ? "22px" : "2px";
+  if(cliAvecBordures) {
+    // Lire la valeur actuelle du curseur
+    var curseur = document.querySelector("#cli-bord-section input[type=range]");
+    if(curseur) bSurf = parseInt(curseur.value) || 50;
+    recalcCli("b");
+  }
+}
+
+function isMobile(){ return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent); }
+
+function addPhotosCli(id, input) {
+  var prev = document.getElementById("cli-"+id+"-photos");
+  if(!prev) return;
+  Array.from(input.files).forEach(function(f) {
+    var r = new FileReader();
+    r.onload = function(e) {
+      var wrap = document.createElement("div");
+      wrap.style.cssText = "position:relative;display:inline-block;";
+      var img = document.createElement("img");
+      img.src = e.target.result;
+      img.style.cssText = "width:72px;height:72px;object-fit:cover;border-radius:8px;border:2px solid #1a3a1a;";
+      var btn = document.createElement("button");
+      btn.textContent = "×";
+      btn.style.cssText = "position:absolute;top:-5px;right:-5px;width:18px;height:18px;border-radius:50%;background:#a32d2d;color:white;border:none;font-size:12px;cursor:pointer;line-height:18px;text-align:center;padding:0;";
+      btn.onclick = function(){ prev.removeChild(wrap); };
+      wrap.appendChild(img); wrap.appendChild(btn);
+      prev.appendChild(wrap);
+    };
+    r.readAsDataURL(f);
+  });
+  input.value="";
+}
+
+function buildRecapCli(id) {
+  var NOMS = {gazon:"Création gazon",tonte:"Tonte gazon",debrou:"Débroussaillage",
+              bordures:"Bordures",haies:"Taille haies",desherb:"Désherbage",
+              ferti:"Fertilisation",desouch:"Dessouchage"};
+  var pfxMap = {gazon:"g",tonte:"t",debrou:"d",haies:"h",desherb:"dh",ferti:"f",desouch:"ds"};
+  var pfx = pfxMap[id]||"g";
+  var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"";
+  var tel = (document.getElementById("cli-"+id+"-tel")||{}).value||"";
+  var commune = (document.getElementById("cli-"+id+"-com")||{}).value||"";
+  var periode = (document.getElementById("cli-"+id+"-periode")||{}).value||"";
+  var priceEl = document.getElementById("cli-result-"+pfx);
+  var price = priceEl ? priceEl.querySelector(".cli-est-price") : null;
+  var priceText = price ? price.textContent : "à confirmer";
+  
+  var msg = "[Ar.T.Event] & Fils - Demande de devis\n";
+  msg += "================================\n";
+  msg += "Service : "+NOMS[id]+"\n";
+  if(nom) msg += "Nom : "+nom+"\n";
+  if(tel) msg += "Tel : "+tel+"\n";
+  if(commune) msg += "Commune : "+commune+(KM[pfx]?" ("+KM[pfx]+"km)":"")+"\n";
+  if(periode) msg += "Période : "+periode+"\n";
+  
+  // Détails service
+  var getSel = function(gid){ var el=document.getElementById(gid); return el&&el.querySelector(".op.on")?el.querySelector(".op.on").textContent:""; };
+  if(id==="gazon") { var typeGazon = gType==="rouleaux" ? "Gazon en rouleaux" : "Gazon semé"; msg += "Type : "+typeGazon+"\n"; if(gMethode) msg += "Préparation : "+gMethode+"\n"; msg += "Surface : "+gSurf+" m²\n"; msg += "Etat : "+getSel("cli-g-etat")+"\n"; }
+  else if(id==="tonte") { 
+    msg += "Surface : "+tSurf+" m²\n";
+    msg += "Hauteur : "+getSel("cli-t-haut")+"\n";
+    msg += "Mode : "+getSel("cli-t-mode")+"\n";
+    msg += "Fréquence : "+getSel("cli-t-freq")+"\n";
+    if(cliAvecBordures) msg += "Bordures : "+bSurf+" ml - "+getSel("cli-b-etat2")+"\n";
+  }
+  else if(id==="debrou") { msg += "Surface : "+dSurf+" m²\n"; msg += "Végétation : "+getSel("cli-d-veg")+"\n"; }
+  else if(id==="haies") { msg += "Longueur : "+hSurf+" ml\n"; msg += "Hauteur : "+getSel("cli-h-haut")+"\n"; msg += "Etat : "+getSel("cli-h-etat")+"\n"; }
+  else if(id==="desherb") { msg += "Surface : "+dhSurf+" m²\n"; msg += "Méthode : "+getSel("cli-dh-meth")+"\n"; }
+  else if(id==="ferti") { msg += "Surface : "+fSurf+" m²\n"; }
+  else if(id==="desouch") {
+    if(dsNb.petite) msg += "Petites : "+dsNb.petite+"\n";
+    if(dsNb.moyenne) msg += "Moyennes : "+dsNb.moyenne+"\n";
+    if(dsNb.grande) msg += "Grandes : "+dsNb.grande+"\n";
+    if(dsNb.tresgrande) msg += "Très grandes : "+dsNb.tresgrande+"\n";
+  }
+  var photoEl = document.getElementById("cli-"+id+"-photos");
+  if(photoEl && photoEl.children.length) msg += "Photos : "+photoEl.children.length+" jointe(s) séparément\n";
+  msg += "================================\n";
+  msg += "Estimation : "+priceText+"\n";
+  msg += "Non contractuelle - confirmation après visite\n";
+  return msg;
+}
+
+function sendWACli(id) {
+  var msg = buildRecapCli(id);
+  window.open("https://wa.me/32495267496?text="+encodeURIComponent(msg));
+}
+
+function sendEmailCli(id) {
+  var msg = buildRecapCli(id);
+  var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
+  window.open("mailto:info@artevent.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - Ar.T.Event")+"&body="+encodeURIComponent(msg));
+}
+
+function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
+
+function setGType(v) { gType=v; recalcCli("g"); }
+
+document.addEventListener("DOMContentLoaded", function(){
+  if(!isMobile()) {
+    var s=document.createElement("style");
+    s.textContent=".btn-wa-gsm{display:none!important}";
+    document.head.appendChild(s);
+  }
+  // Calculer tous les services au démarrage pour que le prix soit prêt
+  setTimeout(function(){
+    ["g","t","d","h","dh","f","ds"].forEach(function(pfx){
+      try{ recalcCli(pfx); }catch(e){ console.warn("init "+pfx, e.message); }
+    });
+  }, 300);
+});
+function setGMethode(v){ gMethode=v; recalcCli("g"); }
+
+</script>
+</body>
+</html>
