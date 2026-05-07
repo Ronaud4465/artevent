@@ -1785,7 +1785,7 @@ function sendWACli(id) {
 function sendEmailCli(id) {
   var msg = buildRecapCli(id);
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
-  window.open("mailto:info@artevent.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - Ar.T.Event")+"&body="+encodeURIComponent(msg));
+  window.open("mailto:ar.t.event@skynet.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - Ar.T.Event")+"&body="+encodeURIComponent(msg));
 }
 
 function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
