@@ -765,7 +765,18 @@ footer{background:#0d1f0d;padding:56px 80px 28px;color:rgba(255,255,255,.6);}
             oninput="var v=parseInt(this.value);if(v>0){hSurf=v;document.getElementById('cli-h-sv').textContent=v+' ml';recalcCli('h');}">
         </div>
       </div>
-        <div class="fg"><label>Hauteur</label>
+                <div class="fg"><label>Largeur de la haie (optionnel)</label>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <input type="number" id="cli-h-largeur" min="0" max="500" placeholder="ex: 80"
+              style="width:90px;border:1.5px solid #ddd;border-radius:8px;padding:8px 12px;font-size:13px;"
+              oninput="recalcCli('h');">
+            <span style="font-size:13px;color:#555;">cm</span>
+          </div>
+          <div style="font-size:11px;color:#888;margin-top:4px;">
+            Une haie large (&gt;80cm) nécessite plus de travail et génère plus de déchets
+          </div>
+        </div>
+<div class="fg"><label>Hauteur</label>
           <div class="ochoix" id="cli-h-haut"><div class="op on" data-v="h12" onclick="pick('cli-h-haut',this,'h12');recalcCli('h')">Moins de 1.2m</div><div class="op" data-v="h15" onclick="pick('cli-h-haut',this,'h15');recalcCli('h')">1.2 à 1.5m</div><div class="op" data-v="h25" onclick="pick('cli-h-haut',this,'h25');recalcCli('h')">1.5 à 2.5m (échelle)</div><div class="op" data-v="h35" onclick="pick('cli-h-haut',this,'h35');recalcCli('h')">2.5 à 3.5m (échelle)</div><div class="op" data-v="hpl" onclick="pick('cli-h-haut',this,'hpl');recalcCli('h')">Plus de 3.5m (échelle)</div></div>
         </div>
         <div class="fg"><label>Faces à tailler</label>
@@ -1367,7 +1378,8 @@ document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 </script>
 
 <script>
-var DIST={'amay':55,'andenne':30,'anderlecht':77,'anhee':20,'ans':79,'anthisnes':71,'antoing':129,'arlon':148,'assesse':21,'ath':101,'attert':139,'aubange':159,'auderghem':67,'awans':75,'aywaille':85,'bassenge':93,'bastogne':109,'beaumont':59,'beauraing':48,'beez':14,'beloeil':102,'berchem':73,'bernissart':109,'bertrix':96,'beyne-heusay':92,'bievre':73,'binche':59,'blegny':101,'bouillon':98,'boussu':94,'braine-l-alleud':55,'braine-le-comte':68,'braives':45,'brugelette':92,'bruxelles':77,'burdinne':38,'chapelle-lez-herlaimont':49,'charleroi':32,'chastre':29,'chatelet':26,'chaumont-gistoux':38,'chievres':97,'chimay':71,'chiny':116,'ciney':35,'clavier':54,'courcelles':41,'court-st-etienne':39,'couvin':61,'crisnee':65,'dinant':26,'doische':42,'dour':97,'durbuy':65,'eghezee':29,'enghien':83,'engis':64,'erezee':79,'erquelinnes':66,'esneux':77,'estinnes':64,'etalle':136,'etterbeek':73,'eupen':124,'evere':79,'faimes':56,'fernelmont':26,'fleron':93,'fleurus':24,'flone':58,'floreffe':3,'florennes':31,'florenville':120,'floriffoux':3,'fontaine-l-eveque':44,'forest':72,'fosses':10,'frameries':84,'franiere':0,'frasnes':121,'ganshoren':84,'gedinne':67,'gembloux':24,'genappe':40,'gerpinnes':27,'gesves':27,'gouvy':116,'grace-hollogne':75,'grimbergen':87,'grâce':75,'grâce-berleur':74,'habay':133,'ham-sur-heure':42,'hamois':35,'hannut':48,'hastiere':30,'havelange':43,'helecine':51,'herstal':89,'herve':101,'hoeilaart':58,'hotton':68,'houffalize':105,'huy':46,'incourt':38,'ixelles':72,'jambes':10,'jemeppe-sur-sambre':15,'jette':83,'jodoigne':46,'juprelle':85,'jurbise':85,'koekelberg':80,'kraainem':75,'la-bruyere':15,'la-louviere':58,'la-roche':83,'laeken':81,'lasne':42,'leglise':119,'lens':87,'lessines':101,'leuze':115,'libramont':93,'liege':83,'lierneux':98,'lincent':42,'lobbes':51,'malmedy':119,'manage':54,'manhay':96,'marche':61,'marche-en-famenne':61,'messancy':159,'mettet':18,'modave':51,'molenbeek':79,'mons':79,'mont-saint-guibert':34,'morlanwelz':52,'mouscron':158,'musson':159,'namur':11,'nandrin':62,'nassogne':69,'neufchateau':106,'neupre':72,'nivelles':51,'ohey':32,'onhaye':25,'orp':42,'ottignies':43,'ouffet':66,'oupeye':92,'overijse':57,'pecq':139,'pepinster':101,'peruwelz':114,'perwez':30,'philippeville':40,'pont-a-celles':43,'pontins':12,'profondeville':10,'quaregnon':87,'quievrain':105,'ramillies':34,'remicourt':63,'rendeux':74,'rixensart':49,'rochefort':57,'saint-georges':58,'saint-hubert':82,'sambreville':17,'schaerbeek':78,'seneffe':52,'seraing':74,'silly':89,'sint-pieters-leeuw':76,'soignies':72,'sombreffe':23,'spa':104,'sprimont':85,'stavelot':110,'sterrebeek':76,'tellin':66,'tervuren':65,'thimister':113,'thuin':49,'tinlot':61,'tintigny':131,'tournai':136,'tourneppe':61,'trois-ponts':104,'tubize':69,'uccle':69,'verlaine':47,'verviers':106,'vielsalm':110,'villers-la-ville':35,'vilvoorde':85,'viroinval':59,'virton':147,'visé':99,'vresse':81,'walcourt':41,'walhain':24,'wanze':38,'waremme':62,'waterloo':59,'watermael':65,'wavre':48,'wellin':59,'wepion':7,'wezembeek':71,'woluwe':71,'yvoir':16,'zaventem':79};
+var DIST={"amay":55,"andenne":30,"anderlecht":77,"anhee":20,"ans":79,"anthisnes":71,"antoing":129,"arlon":148,"assesse":21,"ath":101,"attert":139,"aubange":159,"auderghem":67,"awans":75,"aywaille":85,"bassenge":93,"bastogne":109,"beaumont":59,"beauraing":48,"beez":14,"beloeil":102,"berchem":73,"bernissart":109,"bertrix":96,"beyne-heusay":92,"bievre":73,"binche":59,"blegny":101,"bouillon":98,"boussu":94,"braine-l-alleud":55,"braine-le-comte":68,"braives":45,"brugelette":92,"bruxelles":77,"burdinne":38,"chapelle-lez-herlaimont":49,"charleroi":32,"chastre":29,"chatelet":26,"chaumont-gistoux":38,"chievres":97,"chimay":71,"chiny":116,"ciney":35,"clavier":54,"courcelles":41,"court-st-etienne":39,"couvin":61,"crisnee":65,"dinant":26,"doische":42,"dour":97,"durbuy":65,"eghezee":29,"enghien":83,"engis":64,"erezee":79,"erquelinnes":66,"esneux":77,"estinnes":64,"etalle":136,"etterbeek":73,"eupen":124,"evere":79,"faimes":56,"fernelmont":26,"fleron":93,"fleurus":24,"flone":58,"floreffe":3,"florennes":31,"florenville":120,"floriffoux":3,"fontaine-l-eveque":44,"forest":72,"fosses":10,"frameries":84,"franiere":0,"frasnes":121,"ganshoren":84,"gedinne":67,"gembloux":24,"genappe":40,"gerpinnes":27,"gesves":27,"gouvy":116,"grace-hollogne":75,"grimbergen":87,"grâce":75,"grâce-berleur":74,"habay":133,"ham-sur-heure":42,"hamois":35,"hannut":48,"hastiere":30,"havelange":43,"helecine":51,"herstal":89,"herve":101,"hoeilaart":58,"hotton":68,"houffalize":105,"huy":46,"incourt":38,"ixelles":72,"jambes":10,"jemeppe-sur-sambre":15,"jette":83,"jodoigne":46,"juprelle":85,"jurbise":85,"koekelberg":80,"kraainem":75,"la-bruyere":15,"la-louviere":58,"la-roche":83,"laeken":81,"lasne":42,"leglise":119,"lens":87,"lessines":101,"leuze":115,"libramont":93,"liege":83,"lierneux":98,"lincent":42,"lobbes":51,"malmedy":119,"manage":54,"manhay":96,"marche":61,"marche-en-famenne":61,"messancy":159,"mettet":18,"modave":51,"molenbeek":79,"mons":79,"mont-saint-guibert":34,"morlanwelz":52,"mouscron":158,"musson":159,"namur":11,"nandrin":62,"nassogne":69,"neufchateau":106,"neupre":72,"nivelles":51,"ohey":32,"onhaye":25,"orp":42,"ottignies":43,"ouffet":66,"oupeye":92,"overijse":57,"pecq":139,"pepinster":101,"peruwelz":114,"perwez":30,"philippeville":40,"pont-a-celles":43,"pontins":12,"profondeville":10,"quaregnon":87,"quievrain":105,"ramillies":34,"remicourt":63,"rendeux":74,"rixensart":49,"rochefort":57,"saint-georges":58,"saint-hubert":82,"sambreville":17,"schaerbeek":78,"seneffe":52,"seraing":74,"silly":89,"sint-pieters-leeuw":76,"soignies":72,"sombreffe":23,"spa":104,"sprimont":85,"stavelot":110,"sterrebeek":76,"tellin":66,"tervuren":65,"thimister":113,"thuin":49,"tinlot":61,"tintigny":131,"tournai":136,"tourneppe":61,"trois-ponts":104,"tubize":69,"uccle":69,"verlaine":47,"verviers":106,"vielsalm":110,"villers-la-ville":35,"vilvoorde":85,"viroinval":59,"virton":147,"visé":99,"vresse":81,"walcourt":41,"walhain":24,"wanze":38,"waremme":62,"waterloo":59,"watermael":65,"wavre":48,"wellin":59,"wepion":7,"wezembeek":71,"woluwe":71,"yvoir":16,"zaventem":79,"soye":10,"vitrival":10,"fosses-la-ville":10,"sart-eustache":9,"aisemont":10,"falisolle":8,"saint-germain":4,"moustier-sur-sambre":14,"arsimont":13,"tamines":15,"auvelais":15,"spy":16,"dave":12,"rhisnes":13,"temploux":9,"suarlee":10,"malonne":8,"saint-marc":9,"bouge":12,"vedrin":10,"biesme":18,"biesmeree":19,"oret":18,"tongrinne":8,"ligny":15,"pontaury":6,"lesve":12,"annevoie":18,"bothey":16};
+var DIST={};
 
 // ============================================================
 // CALCULS ARTEVENT - BASE DOCUMENT FOURNI + CORRECTIONS
@@ -1529,6 +1541,11 @@ function calcDebrouCli() {
 function calcHaiesCli() {
   var hEl=document.getElementById("cli-h-haut"), hv="h12";
   if(hEl&&hEl.querySelector(".op.on")) hv=hEl.querySelector(".op.on").dataset.v;
+  // Largeur: info pour le rapport interne, coefficient si > 80cm
+  var largeurEl = document.getElementById("cli-h-largeur");
+  var hLargeur = largeurEl && largeurEl.value ? parseInt(largeurEl.value) : 0;
+  // Coefficient largeur: >80cm = +15%, >150cm = +30%
+  var largeurCoeff = hLargeur > 150 ? 1.30 : (hLargeur > 80 ? 1.15 : 1.0);
   var fEl=document.getElementById("cli-h-faces"), fv="3";
   if(fEl&&fEl.querySelector(".op.on")) fv=fEl.querySelector(".op.on").dataset.v;
   var eEl=document.getElementById("cli-h-etat"), ev="reg";
@@ -1555,7 +1572,7 @@ function calcHaiesCli() {
 
   var base_ml = (BASE[hv]||BASE["h25"])[fv] || 2.90;
   var coeff = COEFF_ETAT[ev] || 1.0;
-  var prix_taille = base_ml * coeff;
+  var prix_taille = base_ml * coeff * largeurCoeff;
 
   // Évacuation: +2 à 5€/m selon état
   var EVAC_ML = {"non":0, "oui_leg":2.0, "oui_moy":3.5, "oui_lrd":5.0};
@@ -1761,7 +1778,7 @@ function calcDistCli(pfx) {
     {headers:{"Accept-Language":"fr"}})
     .then(function(r){return r.json();})
     .then(function(data){
-      if(!data||!data.length){ if(distEl) distEl.innerHTML="<span style=\"color:#854f0b;font-size:12px;\">Non trouvée — saisissez les km manuellement</span>"; return; }
+      if(!data||!data.length){ if(distEl) distEl.innerHTML="<span style=\"color:#854f0b;font-size:12px;\">Commune non reconnue — essayez le nom de votre entité principale (ex: Soye -> Fosses-la-Ville, Vitrival -> Fosses-la-Ville, Temploux -> Namur)</span>"; return; }
       var lat=parseFloat(data[0].lat),lng=parseFloat(data[0].lon);
       var R=6371,dLat=(lat-FRANIERE_LAT)*Math.PI/180,dLng=(lng-FRANIERE_LNG)*Math.PI/180;
       var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(FRANIERE_LAT*Math.PI/180)*Math.cos(lat*Math.PI/180)*Math.sin(dLng/2)*Math.sin(dLng/2);
@@ -1882,8 +1899,19 @@ function sendWACli(id) {
 
 function sendEmailCli(id) {
   var msg = buildRecapCli(id);
+  var rapport = buildRapportInterne(id);
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
-  window.open("mailto:ar.t.event@skynet.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - Ar.T.Event")+"&body="+encodeURIComponent(msg));
+  var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
+  // Email client
+  window.open("mailto:ar.t.event@skynet.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - "+nom)+"&body="+encodeURIComponent(msg));
+  // Rapport interne avec delai pour ne pas bloquer
+  setTimeout(function(){
+    window.open(
+      "mailto:ar.t.event@skynet.be"
+      +"?subject="+encodeURIComponent("[RAPPORT INTERNE] "+(NOMS[id]||id)+" - "+nom)
+      +"&body="+encodeURIComponent(rapport)
+    );
+  }, 1500);
 }
 
 function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
@@ -1904,6 +1932,279 @@ document.addEventListener("DOMContentLoaded", function(){
   }, 300);
 });
 function setGMethode(v){ gMethode=v; recalcCli("g"); }
+
+// ============================================================
+// RAPPORT INTERNE DÉTAILLÉ - UNIQUEMENT POUR RONALD
+// ============================================================
+function buildRapportInterne(id) {
+  var NOMS = {gazon:"Creation gazon",tonte:"Tonte gazon",debrou:"Debroussaillage",
+              haies:"Taille haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
+  var pfxMap = {gazon:"g",tonte:"t",debrou:"d",haies:"h",desherb:"dh",ferti:"f",desouch:"ds"};
+  var pfx = pfxMap[id]||"g";
+  var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"inconnu";
+  var tel = (document.getElementById("cli-"+id+"-tel")||{}).value||"";
+  var commune = (document.getElementById("cli-"+id+"-com")||{}).value||"";
+  var periode = (document.getElementById("cli-"+id+"-periode")||{}).value||"";
+  var priceEl = document.getElementById("cli-result-"+pfx);
+  var price = priceEl ? priceEl.querySelector(".cli-est-price") : null;
+  var priceText = price ? price.textContent : "a confirmer";
+  var km = KM[pfx] || 0;
+  var getSel = function(gid){ var el=document.getElementById(gid); return el&&el.querySelector(".op.on")?el.querySelector(".op.on").textContent.trim():"?"; };
+  var getV   = function(gid){ var el=document.getElementById(gid); return el&&el.querySelector(".op.on")?el.querySelector(".op.on").dataset.v||"?":"?"; };
+
+  var r = "====================================\n";
+  r += "  RAPPORT INTERNE AR.T.EVENT & FILS\n";
+  r += "====================================\n";
+  r += "SERVICE  : "+NOMS[id]+"\n";
+  r += "DATE     : "+new Date().toLocaleDateString("fr-BE")+"\n";
+  r += "------------------------------------\n";
+  r += "CLIENT   : "+nom+(tel?" | "+tel:"")+"\n";
+  r += "COMMUNE  : "+commune+(km?" ("+km+"km / AR="+(km*2)+"km)":"")+"\n";
+  if(periode) r += "PERIODE  : "+periode+"\n";
+  r += "------------------------------------\n";
+  r += "DETAIL CALCUL\n\n";
+
+  // ---- TONTE ----
+  if(id==="tonte") {
+    var acces = getV("cli-t-acces");
+    var sgx = acces==="large";
+    var ckm = sgx ? CKM_REMORQUE : CKM_LEGER;
+    var machine = sgx ? "SXG19 + Crafter/remorque ("+CKM_REMORQUE+"e/km)" : "Tondeuse poussee + Crafter seul ("+CKM_LEGER+"e/km)";
+    var hv = getV("cli-t-haut");
+    var mv = getV("cli-t-mode");
+    var fv = getV("cli-t-freq");
+    var BASE={"norm-mulching":0.18,"norm-ramassage":0.20,"h10-mulching":0.15,"h10-ramassage":0.25,
+              "h20-mulching":0.22,"h20-ramassage":0.30,"h40-mulching":0.32,"h40-ramassage":0.40,
+              "h60-mulching":0.45,"h60-ramassage":0.53,"h80-mulching":0.55,"h80-ramassage":0.58};
+    var FREQ={"7-10":1.0,"2sem":1.25,"3sem":1.55,"mensuel":1.90,"abandon":2.40};
+    var base=BASE[hv+"-"+mv]||0.18;
+    var fc=FREQ[fv]||1.0;
+    var modeC=mv==="ramassage"?1.30:1.0;
+    var prixM2=base*fc*modeC;
+    var cTravail=Math.round(tSurf*prixM2);
+    var cDep=Math.round(ckm*km*2);
+    var rev=cTravail+cDep;
+    var pv=Math.max(80,Math.round(rev*1.40));
+    r += "Surface         : "+tSurf+" m2\n";
+    r += "Machine         : "+machine+"\n";
+    r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
+    r += "Mode            : "+getSel("cli-t-mode")+"\n";
+    r += "Frequence       : "+getSel("cli-t-freq")+"\n";
+    r += "\n-- Calcul --\n";
+    r += "Base €/m2       : "+base.toFixed(2)+"e\n";
+    r += "Coeff frequence : x"+fc+"\n";
+    r += "Coeff mode      : x"+modeC+"\n";
+    r += "Prix final/m2   : "+prixM2.toFixed(3)+"e\n";
+    r += "Cout travail    : "+tSurf+"m2 x "+prixM2.toFixed(3)+" = "+cTravail+"e\n";
+    r += "Deplacement     : "+km+"km x2 x "+ckm+"e/km = "+cDep+"e\n";
+    r += "REVIENT         : "+rev+"e\n";
+    r += "Prix vente +40% : "+pv+"e\n";
+    if(cliAvecBordures) {
+      var BPRIX={"simple":0.40,"norm":0.60,"haut":0.80,"env":1.00,"clot":1.20};
+      var bev=getV("cli-b-etat");
+      var bRev=Math.round(bSurf*(BPRIX[bev]||0.40));
+      var bPv=Math.round(Math.round(bRev*0.85)+(Math.round(bRev*1.15)-Math.round(bRev*0.85))/2);
+      r += "\nBORDURES        : "+bSurf+"ml x "+(BPRIX[bev]||0.40)+"e/ml = "+bRev+"e (dep inclus tonte)\n";
+      r += "Etat bordures   : "+getSel("cli-b-etat")+"\n";
+    }
+  }
+
+  // ---- GAZON ----
+  else if(id==="gazon") {
+    var ares=gSurf/100;
+    var methode=gMethode||"tracteur";
+    var sacs_sem  = gType==="semis"?Math.ceil(ares*4/15):0;
+    var sacs_chaux= Math.ceil(ares*4/20);
+    var sacs_cop  = Math.ceil(ares*4/25);
+    var sacs_eng  = Math.ceil(ares*4/20);
+    var cout_mat  = gType==="semis"
+      ? Math.round(sacs_sem*180+sacs_chaux*19.95+sacs_cop*30+sacs_eng*44.92+8)
+      : Math.round(gSurf*4.5+sacs_chaux*19.95+sacs_cop*30+sacs_eng*44.92+8);
+    var h_mo = methode==="rotadairon"?6:8;
+    var cout_mach = methode==="barreto"?300:(methode==="rotadairon"?425:390);
+    var nb_veh = (methode==="barreto"||gSurf<=300)?1:2;
+    var cDep=Math.round(CKM_REMORQUE*km*2)*nb_veh;
+    var rev=Math.round(cout_mat+h_mo*TAUX+cout_mach+cDep);
+    var pv=Math.max(600,Math.round(rev*1.40));
+    r += "Surface         : "+gSurf+" m2 ("+ares.toFixed(1)+" ares)\n";
+    r += "Type            : "+(gType==="rouleaux"?"Rouleaux @ 4.50e/m2":"Seme")+"\n";
+    r += "Methode         : "+methode+"\n";
+    r += "Etat terrain    : "+getSel("cli-g-etat")+"\n";
+    r += "\n-- Materiaux (sacs complets) --\n";
+    if(gType==="semis")
+      r += "Semences 15kg   : "+sacs_sem+" sac(s) x 180e = "+Math.round(sacs_sem*180)+"e\n";
+    else
+      r += "Gazon rouleaux  : "+gSurf+"m2 x 4.50e = "+Math.round(gSurf*4.5)+"e\n";
+    r += "Chaux 20kg      : "+sacs_chaux+" sac(s) x 19.95e = "+Math.round(sacs_chaux*19.95)+"e\n";
+    r += "Coperon 25kg    : "+sacs_cop+" sac(s) x 30e = "+Math.round(sacs_cop*30)+"e\n";
+    r += "Engrais 20kg    : "+sacs_eng+" sac(s) x 44.92e = "+Math.round(sacs_eng*44.92)+"e\n";
+    r += "Roundup         : ~8e\n";
+    r += "TOTAL MATIERES  : ~"+cout_mat+"e\n";
+    r += "\n-- Main d oeuvre & machines --\n";
+    r += "MO              : "+h_mo+"h x "+TAUX+"e/h = "+Math.round(h_mo*TAUX)+"e\n";
+    r += "Machines        : "+cout_mach+"e\n";
+    r += "\n-- Deplacement --\n";
+    r += "Vehicules       : "+nb_veh+" vehicule(s) + remorque(s)\n";
+    r += "Deplacement     : "+nb_veh+" x "+km+"km x2 x "+CKM_REMORQUE+"e/km = "+cDep+"e\n";
+    r += "\nREVIENT         : "+rev+"e\n";
+    r += "Prix vente +40% : "+pv+"e\n";
+  }
+
+  // ---- FERTILISATION ----
+  else if(id==="ferti") {
+    var ares2=fSurf/100;
+    var avecC=document.getElementById("cli-f-calcaire")&&document.getElementById("cli-f-calcaire").checked;
+    var avecE=document.getElementById("cli-f-startpro")&&document.getElementById("cli-f-startpro").checked;
+    var sC=avecC?Math.ceil(ares2):0;
+    var sE=avecE?Math.ceil(ares2/6.25):0;
+    var hF=Math.max(1,Math.ceil(fSurf/1000));
+    var cDep2=Math.round(CKM_LEGER*km*2);
+    var rev2=Math.round(sC*19.95+sE*61.99+hF*TAUX+cDep2);
+    var pv2=Math.max(80,Math.round(rev2*1.40));
+    r += "Surface         : "+fSurf+" m2 ("+ares2.toFixed(1)+" ares)\n";
+    r += "\n-- Materiaux (sacs complets) --\n";
+    if(avecC) {
+      r += "Chaux 20kg/are  : "+sC+" sac(s) x 19.95e = "+Math.round(sC*19.95)+"e\n";
+      r += "  (dosage: 20kg/are, besoin: "+ares2.toFixed(1)+"kg arrondi)\n";
+    }
+    if(avecE) {
+      r += "Engrais DCM 25kg: "+sE+" sac(s) x 61.99e = "+Math.round(sE*61.99)+"e\n";
+      r += "  (dosage: 4kg/are, besoin: "+Math.round(ares2*4)+"kg arrondi)\n";
+    }
+    r += "\n-- Main d oeuvre --\n";
+    r += "Epandage        : "+fSurf+"m2 / 1000m2/h = "+fSurf/1000+"h -> "+hF+"h facture\n";
+    r += "MO              : "+hF+"h x "+TAUX+"e/h = "+Math.round(hF*TAUX)+"e\n";
+    r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep2+"e\n";
+    r += "\nREVIENT         : "+rev2+"e\n";
+    r += "Prix vente +40% : "+pv2+"e\n";
+  }
+
+  // ---- HAIES ----
+  else if(id==="haies") {
+    var hv2=getV("cli-h-haut");
+    var fv2=getV("cli-h-faces");
+    var ev2=getV("cli-h-etat");
+    var evac2=getV("cli-h-evac");
+    var larg=document.getElementById("cli-h-largeur")?parseInt(document.getElementById("cli-h-largeur").value)||0:0;
+    var largC=larg>150?1.30:(larg>80?1.15:1.0);
+    var BASE_H={"h12":{"1":1.20,"2":1.90,"3":2.30},"h15":{"1":1.30,"2":2.10,"3":2.50},
+                "h25":{"1":1.50,"2":2.40,"3":2.90},"h35":{"1":1.90,"2":3.00,"3":3.80},"hpl":{"1":2.60,"2":4.15,"3":5.15}};
+    var COEFF_H={"reg":1.0,"irr":1.3,"rabat":1.6,"rabat2":2.0};
+    var EVAC_H={"non":0,"oui_leg":2.0,"oui_moy":3.5,"oui_lrd":5.0};
+    var base_h=(BASE_H[hv2]||BASE_H["h25"])[fv2]||2.90;
+    var coeff_h=COEFF_H[ev2]||1.0;
+    var evac_h=EVAC_H[evac2]||0;
+    var cDep3=hSurf>0?Math.round(CKM_REMORQUE*km*2):0;
+    var prix_ml=base_h*coeff_h*largC+evac_h+(hSurf>0?cDep3/hSurf:0);
+    var rev3=Math.round(prix_ml*hSurf);
+    var pv3=Math.max(120,Math.round(rev3*1.40));
+    r += "Longueur        : "+hSurf+" ml\n";
+    r += "Hauteur         : "+getSel("cli-h-haut")+"\n";
+    r += "Faces           : "+fv2+"\n";
+    r += "Etat/type       : "+getSel("cli-h-etat")+"\n";
+    r += "Largeur         : "+(larg>0?larg+"cm":"non renseignee")+"\n";
+    r += "Evacuation      : "+getSel("cli-h-evac")+"\n";
+    r += "\n-- Calcul --\n";
+    r += "Base tarif      : "+base_h.toFixed(2)+"e/ml\n";
+    r += "Coeff etat      : x"+coeff_h+(ev2!=="reg"?" ("+getSel("cli-h-etat")+")":"")+"\n";
+    r += "Coeff largeur   : x"+largC+(larg>0?" ("+larg+"cm)":"")+"\n";
+    r += "Prix taille     : "+Math.round(base_h*coeff_h*largC*100)/100+"e/ml\n";
+    r += "Evacuation      : +"+evac_h+"e/ml\n";
+    r += "Transport       : "+cDep3+"e / "+hSurf+"ml = "+Math.round(cDep3/(hSurf||1)*100)/100+"e/ml\n";
+    r += "PRIX FINAL/ML   : "+Math.round(prix_ml*100)/100+"e/ml\n";
+    r += "REVIENT         : "+Math.round(prix_ml*100)/100+" x "+hSurf+"ml = "+rev3+"e\n";
+    r += "Prix vente +40% : "+pv3+"e\n";
+  }
+
+  // ---- DEBROUSSAILLAGE ----
+  else if(id==="debrou") {
+    var veg=getV("cli-d-veg");
+    var CONF_D={
+      "herbe":  [0.35,0.40,CKM_REMORQUE,"Orion 6",120],
+      "herbe2": [0.40,0.45,CKM_REMORQUE,"Orion 6",120],
+      "orties": [0.50,0.55,CKM_REMORQUE,"Iseki fleau",150],
+      "ronces1":[0.70,0.80,CKM_LEGER,"FS450",150],
+      "ronces2":[0.90,1.10,CKM_REMORQUE,"Chargeur",180],
+      "ligneux":[1.50,1.70,CKM_REMORQUE,"Chargeur+manuel",180]
+    };
+    var cd=CONF_D[veg]||CONF_D["herbe"];
+    var prixMoy=(cd[0]+cd[1])/2;
+    var cDep4=Math.round(cd[2]*km*2);
+    var rev4=Math.round(dSurf*prixMoy)+cDep4;
+    var pv4=Math.max(cd[4],Math.round(rev4*1.40));
+    r += "Surface         : "+dSurf+" m2\n";
+    r += "Vegetation      : "+getSel("cli-d-veg")+"\n";
+    r += "Machine         : "+cd[3]+"\n";
+    r += "Vehicule        : "+(cd[2]===CKM_REMORQUE?"Crafter+remorque ("+CKM_REMORQUE+"e/km)":"Crafter seul ("+CKM_LEGER+"e/km)")+"\n";
+    r += "\n-- Calcul --\n";
+    r += "Prix base       : "+cd[0].toFixed(2)+"-"+cd[1].toFixed(2)+"e/m2 -> moy "+prixMoy.toFixed(2)+"e/m2\n";
+    r += "Cout travail    : "+dSurf+"m2 x "+prixMoy.toFixed(2)+" = "+Math.round(dSurf*prixMoy)+"e\n";
+    r += "Deplacement     : "+km+"km x2 x "+cd[2]+"e/km = "+cDep4+"e\n";
+    r += "Minimum chantier: "+cd[4]+"e\n";
+    r += "REVIENT         : "+rev4+"e\n";
+    r += "Prix vente +40% : "+pv4+"e\n";
+  }
+
+  // ---- DESHERBAGE ----
+  else if(id==="desherb") {
+    var meth=getV("cli-dh-meth");
+    var PRIX_DH={"thermique":0.60,"chimique":0.45};
+    var prixDH=PRIX_DH[meth]||0.60;
+    var cDep5=Math.round(CKM_LEGER*km*2);
+    var rev5=Math.round(dhSurf*prixDH)+cDep5;
+    var pv5=Math.max(80,Math.round(rev5*1.40));
+    r += "Surface         : "+dhSurf+" m2\n";
+    r += "Methode         : "+getSel("cli-dh-meth")+"\n";
+    r += "Prix/m2         : "+prixDH+"e/m2\n";
+    r += "Cout travail    : "+dhSurf+"m2 x "+prixDH+" = "+Math.round(dhSurf*prixDH)+"e\n";
+    r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep5+"e\n";
+    r += "REVIENT         : "+rev5+"e\n";
+    r += "Prix vente +40% : "+pv5+"e\n";
+  }
+
+  // ---- DESSOUCHAGE ----
+  else if(id==="desouch") {
+    var TEMPS={petite:15,moyenne:30,grande:60,tresgrande:90};
+    var total_min=0;
+    for(var t in dsNb) total_min+=(dsNb[t]||0)*(TEMPS[t]||30);
+    var h_reel=total_min/60;
+    var h_fact=Math.ceil(h_reel);
+    var cout_mach2=Math.ceil(h_reel/4)*250;
+    var cDep6=Math.round(CKM_LEGER*km*2);
+    var rev6=Math.round(h_fact*TAUX+cout_mach2+cDep6);
+    var pv6=Math.max(120,Math.round(rev6*1.40));
+    r += "Souches         :\n";
+    if(dsNb.petite)     r += "  Petites (<20cm) : "+dsNb.petite+" x 15min = "+dsNb.petite*15+"min\n";
+    if(dsNb.moyenne)    r += "  Moyennes (20-40cm): "+dsNb.moyenne+" x 30min = "+dsNb.moyenne*30+"min\n";
+    if(dsNb.grande)     r += "  Grandes (40-60cm) : "+dsNb.grande+" x 60min = "+dsNb.grande*60+"min\n";
+    if(dsNb.tresgrande) r += "  Tres grandes (+60cm): "+dsNb.tresgrande+" x 90min = "+dsNb.tresgrande*90+"min\n";
+    r += "Temps total     : "+total_min+"min ("+h_reel.toFixed(1)+"h) -> "+h_fact+"h facture\n";
+    r += "MO              : "+h_fact+"h x "+TAUX+"e/h = "+Math.round(h_fact*TAUX)+"e\n";
+    r += "Location defonc.: "+Math.ceil(h_reel/4)+" demi-journee(s) x 250e = "+cout_mach2+"e\n";
+    r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep6+"e\n";
+    r += "REVIENT         : "+rev6+"e\n";
+    r += "Prix vente +40% : "+pv6+"e\n";
+  }
+
+  r += "------------------------------------\n";
+  r += "ESTIMATION CLIENT : "+priceText+"\n";
+  r += "====================================\n";
+  r += "Envoye depuis artevent.vercel.app\n";
+
+  return r;
+}
+
+function sendRapportInterne(id) {
+  var rapport = buildRapportInterne(id);
+  var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",
+            haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
+  var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
+  window.open(
+    "mailto:ar.t.event@skynet.be"
+    +"?subject="+encodeURIComponent("[RAPPORT INTERNE] "+( NOMS[id]||id)+" - "+nom)
+    +"&body="+encodeURIComponent(rapport)
+  );
+}
 
 </script>
 </body>
