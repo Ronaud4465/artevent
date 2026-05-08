@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ar.T.Event & Fils — Paysagiste professionnel en Wallonie et Bruxelles. Entretien jardins, élagage, création espaces verts, pavage. Basé à Franière (Namur). Devis gratuit.">
 <meta name="keywords" content="paysagiste Namur, entretien jardin Wallonie, élagage Franière, espaces verts Bruxelles, tonte haies débroussaillage, création gazon Namur, paysagiste Gembloux, jardinier Charleroi">
-<title>[Ar.T.Event] & Fils — Paysagiste Professionnel | Wallonie & Bruxelles</title>
+<title>[Ar.T.Event] & Fils v3 — Paysagiste Professionnel | Wallonie & Bruxelles</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -1904,16 +1904,19 @@ function sendEmailCli(id) {
   var rapport = buildRapportInterne(id);
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
   var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
-  // Email client
-  window.open("mailto:ar.t.event@skynet.be?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - "+nom)+"&body="+encodeURIComponent(msg));
-  // Rapport interne avec delai pour ne pas bloquer
-  setTimeout(function(){
-    window.open(
-      "mailto:ar.t.event@skynet.be"
-      +"?subject="+encodeURIComponent("[RAPPORT INTERNE] "+(NOMS[id]||id)+" - "+nom)
-      +"&body="+encodeURIComponent(rapport)
-    );
-  }, 1500);
+  // UN seul email avec résumé client + rapport interne en dessous
+  // Le navigateur bloque le 2e window.open() comme popup non sollicité
+  var corps_complet = msg
+    + "\n\n"
+    + "================================================\n"
+    + "         RAPPORT INTERNE - NE PAS TRANSMETTRE\n"
+    + "================================================\n"
+    + rapport;
+  window.open(
+    "mailto:ar.t.event@skynet.be"
+    +"?subject="+encodeURIComponent("Devis - "+(NOMS[id]||id)+" - "+nom)
+    +"&body="+encodeURIComponent(corps_complet)
+  );
 }
 
 function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
