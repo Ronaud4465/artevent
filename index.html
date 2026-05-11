@@ -677,7 +677,7 @@ var DIST={"amay":55,"andenne":30,"anderlecht":77,"anhee":20,"ans":79,"anthisnes"
 
 var TAUX = 37.5;   // moyenne 35-40€/h
 var MOMIN = 60;    // minimum intervention
-var MARGE = 0.40;  // 40% marge standard
+var MARGE = 0.20;  // 40% marge standard
 
 // Coûts véhicule €/km — simplifié (astuce pro)
 var CKM_LEGER    = 1.10;  // véhicule léger sans remorque
@@ -1010,8 +1010,8 @@ function recalcCli(pfx) {
 function showResultCli(pfx, rev, marge, minF) {
   // marge est en décimal (ex: 0.40 = 40%)
   var pv = Math.max(minF||0, Math.round(rev*(1+marge)));
-  var lo = Math.max(minF||0, Math.round(pv*0.85));
-  var hi = Math.round(pv*1.20);
+  var lo = Math.max(minF||0, Math.round(pv*0.95));
+  var hi = Math.round(pv*1.05);
   var el = document.getElementById("cli-result-"+pfx);
   if(!el) return;
   if(rev <= 0) {
@@ -1273,7 +1273,7 @@ function buildRapportInterne(id) {
     var cTravail=Math.round(tSurf*prixM2);
     var cDep=Math.round(ckm*km*2);
     var rev=cTravail+cDep;
-    var pv=Math.max(80,Math.round(rev*1.40));
+    var pv=Math.max(80,Math.round(rev*1.20));
     r += "Surface         : "+tSurf+" m2\n";
     r += "Machine         : "+machine+"\n";
     r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
@@ -1287,7 +1287,7 @@ function buildRapportInterne(id) {
     r += "Cout travail    : "+tSurf+"m2 x "+prixM2.toFixed(3)+" = "+cTravail+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+ckm+"e/km = "+cDep+"e\n";
     r += "REVIENT         : "+rev+"e\n";
-    r += "Prix vente +40% : "+pv+"e\n";
+    r += "Prix vente +20% : "+pv+"e\n";
     if(cliAvecBordures) {
       var BPRIX={"simple":0.40,"norm":0.60,"haut":0.80,"env":1.00,"clot":1.20};
       var bev=getV("cli-b-etat");
@@ -1314,7 +1314,7 @@ function buildRapportInterne(id) {
     var nb_veh = (methode==="barreto"||gSurf<=300)?1:2;
     var cDep=Math.round(CKM_REMORQUE*km*2)*nb_veh;
     var rev=Math.round(cout_mat+h_mo*TAUX+cout_mach+cDep);
-    var pv=Math.max(600,Math.round(rev*1.40));
+    var pv=Math.max(600,Math.round(rev*1.20));
     r += "Surface         : "+gSurf+" m2 ("+ares.toFixed(1)+" ares)\n";
     r += "Type            : "+(gType==="rouleaux"?"Rouleaux @ 4.50e/m2":"Seme")+"\n";
     r += "Methode         : "+methode+"\n";
@@ -1336,7 +1336,7 @@ function buildRapportInterne(id) {
     r += "Vehicules       : "+nb_veh+" vehicule(s) + remorque(s)\n";
     r += "Deplacement     : "+nb_veh+" x "+km+"km x2 x "+CKM_REMORQUE+"e/km = "+cDep+"e\n";
     r += "\nREVIENT         : "+rev+"e\n";
-    r += "Prix vente +40% : "+pv+"e\n";
+    r += "Prix vente +20% : "+pv+"e\n";
   }
 
   // ---- FERTILISATION ----
@@ -1349,7 +1349,7 @@ function buildRapportInterne(id) {
     var hF=Math.max(1,Math.ceil(fSurf/1000));
     var cDep2=Math.round(CKM_LEGER*km*2);
     var rev2=Math.round(sC*19.95+sE*61.99+hF*TAUX+cDep2);
-    var pv2=Math.max(80,Math.round(rev2*1.40));
+    var pv2=Math.max(80,Math.round(rev2*1.20));
     r += "Surface         : "+fSurf+" m2 ("+ares2.toFixed(1)+" ares)\n";
     r += "\n-- Materiaux (sacs complets) --\n";
     if(avecC) {
@@ -1365,7 +1365,7 @@ function buildRapportInterne(id) {
     r += "MO              : "+hF+"h x "+TAUX+"e/h = "+Math.round(hF*TAUX)+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep2+"e\n";
     r += "\nREVIENT         : "+rev2+"e\n";
-    r += "Prix vente +40% : "+pv2+"e\n";
+    r += "Prix vente +20% : "+pv2+"e\n";
   }
 
   // ---- HAIES ----
@@ -1386,7 +1386,7 @@ function buildRapportInterne(id) {
     var cDep3=hSurf>0?Math.round(CKM_REMORQUE*km*2):0;
     var prix_ml=base_h*coeff_h*largC+evac_h+(hSurf>0?cDep3/hSurf:0);
     var rev3=Math.round(prix_ml*hSurf);
-    var pv3=Math.max(120,Math.round(rev3*1.40));
+    var pv3=Math.max(120,Math.round(rev3*1.20));
     r += "Longueur        : "+hSurf+" ml\n";
     r += "Hauteur         : "+getSel("cli-h-haut")+"\n";
     r += "Faces           : "+fv2+"\n";
@@ -1402,7 +1402,7 @@ function buildRapportInterne(id) {
     r += "Transport       : "+cDep3+"e / "+hSurf+"ml = "+Math.round(cDep3/(hSurf||1)*100)/100+"e/ml\n";
     r += "PRIX FINAL/ML   : "+Math.round(prix_ml*100)/100+"e/ml\n";
     r += "REVIENT         : "+Math.round(prix_ml*100)/100+" x "+hSurf+"ml = "+rev3+"e\n";
-    r += "Prix vente +40% : "+pv3+"e\n";
+    r += "Prix vente +20% : "+pv3+"e\n";
   }
 
   // ---- DEBROUSSAILLAGE ----
@@ -1420,7 +1420,7 @@ function buildRapportInterne(id) {
     var prixMoy=(cd[0]+cd[1])/2;
     var cDep4=Math.round(cd[2]*km*2);
     var rev4=Math.round(dSurf*prixMoy)+cDep4;
-    var pv4=Math.max(cd[4],Math.round(rev4*1.40));
+    var pv4=Math.max(cd[4],Math.round(rev4*1.20));
     r += "Surface         : "+dSurf+" m2\n";
     r += "Vegetation      : "+getSel("cli-d-veg")+"\n";
     r += "Machine         : "+cd[3]+"\n";
@@ -1431,7 +1431,7 @@ function buildRapportInterne(id) {
     r += "Deplacement     : "+km+"km x2 x "+cd[2]+"e/km = "+cDep4+"e\n";
     r += "Minimum chantier: "+cd[4]+"e\n";
     r += "REVIENT         : "+rev4+"e\n";
-    r += "Prix vente +40% : "+pv4+"e\n";
+    r += "Prix vente +20% : "+pv4+"e\n";
   }
 
   // ---- DESHERBAGE ----
@@ -1441,14 +1441,14 @@ function buildRapportInterne(id) {
     var prixDH=PRIX_DH[meth]||0.60;
     var cDep5=Math.round(CKM_LEGER*km*2);
     var rev5=Math.round(dhSurf*prixDH)+cDep5;
-    var pv5=Math.max(80,Math.round(rev5*1.40));
+    var pv5=Math.max(80,Math.round(rev5*1.20));
     r += "Surface         : "+dhSurf+" m2\n";
     r += "Methode         : "+getSel("cli-dh-meth")+"\n";
     r += "Prix/m2         : "+prixDH+"e/m2\n";
     r += "Cout travail    : "+dhSurf+"m2 x "+prixDH+" = "+Math.round(dhSurf*prixDH)+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep5+"e\n";
     r += "REVIENT         : "+rev5+"e\n";
-    r += "Prix vente +40% : "+pv5+"e\n";
+    r += "Prix vente +20% : "+pv5+"e\n";
   }
 
   // ---- DESSOUCHAGE ----
@@ -1461,7 +1461,7 @@ function buildRapportInterne(id) {
     var cout_mach2=Math.ceil(h_reel/4)*250;
     var cDep6=Math.round(CKM_LEGER*km*2);
     var rev6=Math.round(h_fact*TAUX+cout_mach2+cDep6);
-    var pv6=Math.max(120,Math.round(rev6*1.40));
+    var pv6=Math.max(120,Math.round(rev6*1.20));
     r += "Souches         :\n";
     if(dsNb.petite)     r += "  Petites (<20cm) : "+dsNb.petite+" x 15min = "+dsNb.petite*15+"min\n";
     if(dsNb.moyenne)    r += "  Moyennes (20-40cm): "+dsNb.moyenne+" x 30min = "+dsNb.moyenne*30+"min\n";
@@ -1472,7 +1472,7 @@ function buildRapportInterne(id) {
     r += "Location defonc.: "+Math.ceil(h_reel/4)+" demi-journee(s) x 250e = "+cout_mach2+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+CKM_LEGER+"e/km = "+cDep6+"e\n";
     r += "REVIENT         : "+rev6+"e\n";
-    r += "Prix vente +40% : "+pv6+"e\n";
+    r += "Prix vente +20% : "+pv6+"e\n";
   }
 
   r += "------------------------------------\n";
