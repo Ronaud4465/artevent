@@ -1197,7 +1197,7 @@ function sendEmailCli(id) {
   // 1) recapitulatif simple de la demande
   // 2) rapport interne detaille avec calculs
  /*
-var mailRecap = emailjs.send("service_f420dvd", "template_tgqmflf", {
+var mailRecap = emailjs.send("service_f420dvd", "template_tpqmflf", {
     name: nom,
     nom_client: nom,
     service: service,
@@ -1209,7 +1209,7 @@ var mailRecap = emailjs.send("service_f420dvd", "template_tgqmflf", {
     to_email: "ar.t.event@skynet.be"
   });
   
-//var mailInterne = emailjs.send("service_f420dvd", "template_tgqmflf", {
+//var mailInterne = emailjs.send("service_f420dvd", "template_tpqmflf", {
   to_email: "ar.t.event@skynet.be",
   client_nom: nom,
   service: service,
@@ -1220,7 +1220,7 @@ var mailRecap = emailjs.send("service_f420dvd", "template_tgqmflf", {
 });
 */
 
- emailjs.send("service_f420dvd", "template_tgqmflf", {
+ emailjs.send("service_f420dvd", "template_tpqmflf", {
   to_email: "ar.t.event@skynet.be",
   subject: "TEST EMAILJS",
   titre: "TEST EMAILJS",
@@ -1521,7 +1521,7 @@ function sendRapportInterne(id) {
   var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
   var service = NOMS[id]||id;
 
-  emailjs.send("service_f420dvd", "template_tgqmflf", {
+  emailjs.send("service_f420dvd", "template_tpqmflf", {
     name: nom,
     nom_client: nom,
     service: service,
