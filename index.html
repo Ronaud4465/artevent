@@ -1218,12 +1218,18 @@ var mailInterne = emailjs.send("service_f420dvd", "template_tgqmflf", {
   rapport: "Test rapport interne"
 });
 
-  Promise.all([mailRecap, mailInterne]).then(function() {
-    alert("Votre demande a bien ete envoyee. Nous vous recontacterons rapidement.");
-  }).catch(function(error) {
-    console.error("EmailJS erreur:", error);
-    alert("Erreur lors de l'envoi. Veuillez reessayer ou nous contacter directement.");
-  });
+ emailjs.send("service_f420dvd", "template_tgqmflf", {
+  to_email: "ar.t.event@skynet.be",
+  subject: "TEST EMAILJS",
+  titre: "TEST EMAILJS",
+  message: "Ceci est un test simple",
+  rapport: "Test rapport interne"
+}).then(function() {
+  alert("Test envoyé");
+}).catch(function(error) {
+  console.error("ERREUR EMAILJS COMPLETE :", error);
+  alert("Erreur : " + JSON.stringify(error));
+});
 }
 
 function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
