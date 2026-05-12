@@ -1197,7 +1197,7 @@ function sendEmailCli(id) {
   // 1) recapitulatif simple de la demande
   // 2) rapport interne detaille avec calculs
  /*
-  //var mailRecap = emailjs.send("service_f420dvd", "template_tgqmflf", {
+var mailRecap = emailjs.send("service_f420dvd", "template_tgqmflf", {
     name: nom,
     nom_client: nom,
     service: service,
@@ -1219,7 +1219,7 @@ function sendEmailCli(id) {
   rapport: "Test rapport interne"
 });
 */
-  
+
  emailjs.send("service_f420dvd", "template_tgqmflf", {
   to_email: "ar.t.event@skynet.be",
   subject: "TEST EMAILJS",
