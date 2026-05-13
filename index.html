@@ -1185,11 +1185,9 @@ function sendWACli(id) {
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",
             desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
   var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
+  var waUrl = "https://wa.me/32495267496?text="+encodeURIComponent(msg);
 
-  // Ouvrir WhatsApp
-  window.open("https://wa.me/32495267496?text="+encodeURIComponent(msg));
-
-  // Envoyer rapport interne via Formspree (invisible pour le client)
+  // Envoyer rapport interne via Formspree D'ABORD, puis ouvrir WhatsApp
   fetch("https://formspree.io/f/xeendrqo", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -1204,6 +1202,9 @@ function sendWACli(id) {
     else console.warn("Formspree erreur:", r.status);
   }).catch(function(e) {
     console.warn("Formspree erreur réseau:", e);
+  }).finally(function() {
+    // Ouvrir WhatsApp après l'envoi Formspree
+    window.location.href = waUrl;
   });
 }
 
