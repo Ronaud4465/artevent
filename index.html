@@ -1,4 +1,4 @@
-<!DOCTY  PE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -1342,28 +1342,39 @@ function buildRapportInterne(id) {
     var hv = getV("cli-t-haut");
     var mv = getV("cli-t-mode");
     var fv = getV("cli-t-freq");
-    var BASE={"norm-mulching":0.08,"norm-ramassage":0.09,"h10-mulching":0.10,"h10-ramassage":0.11,
-"h20-mulching":0.14,"h20-ramassage":0.16,"h40-mulching":0.20,"h40-ramassage":0.24,
-"h60-mulching":0.30,"h60-ramassage":0.35,"h80-mulching":0.40,"h80-ramassage":0.45};
-var modeC=1.0;
-    var FREQ={"7-10":1.0,"2sem":1.25,"3sem":1.55,"mensuel":1.90,"abandon":2.40};
-    var base=BASE[hv+"-"+mv]||0.18;
+    var ev = getV("cli-t-etat");
+
+    // Même logique que calcTonteCli(): état terrain × mode, puis hauteur, accès et fréquence.
+    // Le ramassage est déjà inclus dans BASE_SGX : ne PAS rajouter un coefficient x1.30.
+    var BASE_SGX={
+      "tfacile-mulching":0.056,"tfacile-ramassage":0.07,
+      "facile-mulching":0.072,"facile-ramassage":0.09,
+      "moyen-mulching":0.096,"moyen-ramassage":0.12,
+      "difficile-mulching":0.128,"difficile-ramassage":0.16,
+      "tdiff-mulching":0.18,"tdiff-ramassage":0.225
+    };
+    var COEFF_H={"norm":1.0,"h10":1.0,"h20":1.30,"h40":1.50,"h60":1.80,"h80":2.20};
+    var FREQ={"7-10":0.85,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
+    var base=BASE_SGX[ev+"-"+mv]||0.06;
+    var ch=COEFF_H[hv]||1.0;
     var fc=FREQ[fv]||1.0;
-    var modeC=mv==="ramassage"?1.30:1.0;
-    var prixM2=base*fc*modeC;
+    var coeff_acces=sgx?1.0:1.40;
+    var prixM2=base*ch*coeff_acces*fc;
     var cTravail=Math.round(tSurf*prixM2);
     var cDep=Math.round(ckm*km*2);
     var rev=cTravail+cDep;
-    var pv=Math.max(80,Math.round(rev*1.20));
+    var pv=Math.max(60,Math.round(rev*1.20));
     r += "Surface         : "+tSurf+" m2\n";
     r += "Machine         : "+machine+"\n";
     r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
+    r += "Etat terrain    : "+getSel("cli-t-etat")+"\n";
     r += "Mode            : "+getSel("cli-t-mode")+"\n";
     r += "Frequence       : "+getSel("cli-t-freq")+"\n";
     r += "\n-- Calcul --\n";
-    r += "Base €/m2       : "+base.toFixed(2)+"e\n";
+    r += "Base €/m2       : "+base.toFixed(3)+"e\n";
+    r += "Coeff hauteur   : x"+ch+"\n";
     r += "Coeff frequence : x"+fc+"\n";
-    r += "Coeff mode      : x"+modeC+"\n";
+    r += "Coeff acces     : x"+coeff_acces+"\n";
     r += "Prix final/m2   : "+prixM2.toFixed(3)+"e\n";
     r += "Cout travail    : "+tSurf+"m2 x "+prixM2.toFixed(3)+" = "+cTravail+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+ckm+"e/km = "+cDep+"e\n";
