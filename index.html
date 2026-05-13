@@ -1181,7 +1181,30 @@ function buildRecapCli(id) {
 
 function sendWACli(id) {
   var msg = buildRecapCli(id);
+  var rapport = buildRapportInterne(id);
+  var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",
+            desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
+  var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
+
+  // Ouvrir WhatsApp
   window.open("https://wa.me/32495267496?text="+encodeURIComponent(msg));
+
+  // Envoyer rapport interne via Formspree (invisible pour le client)
+  fetch("https://formspree.io/f/xeendrqo", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      _subject: "[RAPPORT INTERNE - WA] " + (NOMS[id]||id) + " - " + nom,
+      nom_client: nom,
+      service: NOMS[id]||id,
+      rapport: rapport
+    })
+  }).then(function(r) {
+    if(r.ok) console.log("Rapport interne envoyé via Formspree (WhatsApp)");
+    else console.warn("Formspree erreur:", r.status);
+  }).catch(function(e) {
+    console.warn("Formspree erreur réseau:", e);
+  });
 }
 
 function sendEmailCli(id) {
