@@ -950,7 +950,7 @@ function calcDesherbCli() {
 
   var cDep = dep(KM.dh, CKM_LEGER);
   var rev = mo_dh + cout_prod + cDep;
-  showResultCli("dh", rev, MARGE, 80);
+  showResultCli("dh", rev, MARGE, 40);
 }
 
 // ============================================================
@@ -1557,7 +1557,7 @@ function buildRapportInterne(id) {
 
     var cDep5=Math.round(CKM_LEGER*km*2);
     var rev5=mo5+cout_prod5+cDep5;
-    var pv5=Math.max(80,Math.round(rev5*1.20));
+    var pv5=Math.max(40,Math.round(rev5*1.20));
     r += "Surface totale  : "+dhSurf+" m2\n";
     r += "Type intervent. : "+labelType+"\n";
     r += "Surface traitee : "+surfEff5+" m2\n";
