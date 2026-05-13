@@ -1,9 +1,9 @@
-<!DOCTY  PE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>emailjs.init("l9z5urBIc0YEuIqy9");</script>
+<script>emailjs.init("9y25urBkt0YEulqy9");</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ar.T.Event & Fils — Paysagiste professionnel en Wallonie et Bruxelles. Entretien jardins, élagage, création espaces verts, pavage. Basé à Franière (Namur). Devis gratuit.">
 <meta name="keywords" content="paysagiste Namur, entretien jardin Wallonie, élagage Franière, espaces verts Bruxelles, tonte haies débroussaillage, création gazon Namur, paysagiste Gembloux, jardinier Charleroi">
@@ -1191,41 +1191,28 @@ function sendEmailCli(id) {
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",haies:"Haies",
             desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
   var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
-  var service = NOMS[id]||id;
+  var sujet = "Devis - "+(NOMS[id]||id)+" - "+nom;
 
-  // Deux e-mails automatiques via EmailJS :
-  // 1) recapitulatif simple de la demande
-  // 2) rapport interne detaille avec calculs
- 
-var mailRecap = emailjs.send("service_f420dvd", "template_tpqmflf", {
+  // Email 1: résumé client UNIQUEMENT via mailto
+  window.open(
+    "mailto:ar.t.event@skynet.be"
+    +"?subject="+encodeURIComponent(sujet)
+    +"&body="+encodeURIComponent(msgClient)
+  );
+
+  // Email 2: rapport interne via EmailJS (automatique, invisible pour le client)
+  emailjs.send("service_f420dvd", "template_2yzrx2q", {
     name: nom,
+    service: NOMS[id]||id,
     nom_client: nom,
-    service: service,
-    subject: "[DEMANDE DE DEVIS] "+service+" - "+nom,
-    titre: "[DEMANDE DE DEVIS] "+service+" - "+nom,
-    message: msgClient,
-    rapport: msgClient,
-    email: "ar.t.event@skynet.be",
-    to_email: "ar.t.event@skynet.be"
+    rapport: rapport,
+    email: "ar.t.event@skynet.be"
+  }).then(function() {
+    console.log("Rapport interne envoyé via EmailJS");
+  }, function(error) {
+    console.warn("EmailJS erreur:", error);
   });
-  
-//var mailInterne = emailjs.send("service_f420dvd", "template_tpqmflf", {
-  to_email: "ar.t.event@skynet.be",
-  client_nom: nom,
-  service: service,
-  subject: "RAPPORT INTERNE - TEST",
-  titre: "RAPPORT INTERNE - TEST",
-  message: "Test rapport interne",
-  rapport: "Test rapport interne"
-});
-
-
- Promise.all([mailRecap, mailInterne]).then(function() {
-  alert("Votre demande a bien été envoyée. Merci pour votre confiance, nous vous recontacterons rapidement.");
-}).catch(function(error) {
-  console.error("Emails erreur", error);
-  alert("Erreur lors de l’envoi. Veuillez réessayer ou nous contacter directement.");
-});
+}
 
 function pick(gid,el,val){ var g=document.getElementById(gid); if(g) g.querySelectorAll(".op").forEach(function(o){o.classList.remove("on");}); el.classList.add("on"); }
 
@@ -1512,24 +1499,11 @@ function sendRapportInterne(id) {
   var NOMS={gazon:"Gazon",tonte:"Tonte",debrou:"Debroussaillage",
             haies:"Haies",desherb:"Desherbage",ferti:"Fertilisation",desouch:"Dessouchage"};
   var nom = (document.getElementById("cli-"+id+"-nom")||{}).value||"client";
-  var service = NOMS[id]||id;
-
-  emailjs.send("service_f420dvd", "template_tpqmflf", {
-    name: nom,
-    nom_client: nom,
-    service: service,
-    subject: "[RAPPORT INTERNE] "+service+" - "+nom,
-    titre: "[RAPPORT INTERNE] "+service+" - "+nom,
-    message: rapport,
-    rapport: rapport,
-    email: "ar.t.event@skynet.be",
-    to_email: "ar.t.event@skynet.be"
-  }).then(function() {
-    alert("Rapport interne envoye.");
-  }).catch(function(error) {
-    console.error("EmailJS erreur rapport interne:", error);
-    alert("Erreur lors de l'envoi du rapport interne.");
-  });
+  window.open(
+    "mailto:ar.t.event@skynet.be"
+    +"?subject="+encodeURIComponent("[RAPPORT INTERNE] "+( NOMS[id]||id)+" - "+nom)
+    +"&body="+encodeURIComponent(rapport)
+  );
 }
 
 // ============================================================
@@ -1538,6 +1512,5 @@ function sendRapportInterne(id) {
 
 
 </script>
- <!-- update vercel --> 
 </body>
 </html>
