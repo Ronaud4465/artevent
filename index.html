@@ -681,8 +681,8 @@ var MOMIN = 60;    // minimum intervention
 var MARGE = 0.20;  // 40% marge standard
 
 // Coûts véhicule €/km — simplifié (astuce pro)
-var CKM_LEGER    = 1.10;  // véhicule léger sans remorque
-var CKM_REMORQUE = 1.50;  // véhicule avec remorque
+var CKM_LEGER    = 0.50;  // véhicule léger sans remorque
+var CKM_REMORQUE = 0.50;  // véhicule avec remorque
 
 // Alias pour compatibilité
 var CKM_CRAFTER      = CKM_LEGER;
@@ -1412,8 +1412,11 @@ function buildRapportInterne(id) {
     var fv2=getV("cli-h-faces");
     var ev2=getV("cli-h-etat");
     var evac2=getV("cli-h-evac");
-    var larg=document.getElementById("cli-h-largeur")?parseInt(document.getElementById("cli-h-largeur").value)||0:0;
-    var largC=larg>150?1.30:(larg>80?1.15:1.0);
+    var lv2=getV("cli-h-larg");
+    var LARG_LABELS={"l120":"< 1.2m","l160":"1.2 à 1.6m","l200":"1.6 à 2.0m","l250":"2.0 à 2.5m","lpl":"> 2.5m"};
+    var LARG_COEFF={"l120":1.0,"l160":1.15,"l200":1.30,"l250":1.50,"lpl":1.75};
+    var larg=LARG_LABELS[lv2]||"< 1.2m";
+    var largC=LARG_COEFF[lv2]||1.0;
     var BASE_H={"h12":{"1":1.20,"2":1.90,"3":2.30},"h15":{"1":1.30,"2":2.10,"3":2.50},
                 "h25":{"1":1.50,"2":2.40,"3":2.90},"h35":{"1":1.90,"2":3.00,"3":3.80},"hpl":{"1":2.60,"2":4.15,"3":5.15}};
     var COEFF_H={"reg":1.0,"irr":1.3,"rabat":1.6,"rabat2":2.0};
@@ -1429,12 +1432,12 @@ function buildRapportInterne(id) {
     r += "Hauteur         : "+getSel("cli-h-haut")+"\n";
     r += "Faces           : "+fv2+"\n";
     r += "Etat/type       : "+getSel("cli-h-etat")+"\n";
-    r += "Largeur         : "+(larg>0?larg+"cm":"non renseignee")+"\n";
+    r += "Largeur         : "+larg+"\n";
     r += "Evacuation      : "+getSel("cli-h-evac")+"\n";
     r += "\n-- Calcul --\n";
     r += "Base tarif      : "+base_h.toFixed(2)+"e/ml\n";
     r += "Coeff etat      : x"+coeff_h+(ev2!=="reg"?" ("+getSel("cli-h-etat")+")":"")+"\n";
-    r += "Coeff largeur   : x"+largC+(larg>0?" ("+larg+"cm)":"")+"\n";
+    r += "Coeff largeur   : x"+largC+" ("+larg+")\n";
     r += "Prix taille     : "+Math.round(base_h*coeff_h*largC*100)/100+"e/ml\n";
     r += "Evacuation      : +"+evac_h+"e/ml\n";
     r += "Transport       : "+cDep3+"e / "+hSurf+"ml = "+Math.round(cDep3/(hSurf||1)*100)/100+"e/ml\n";
