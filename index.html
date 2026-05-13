@@ -1196,7 +1196,7 @@ function sendEmailCli(id) {
   // Deux e-mails automatiques via EmailJS :
   // 1) recapitulatif simple de la demande
   // 2) rapport interne detaille avec calculs
- /*
+ 
 var mailRecap = emailjs.send("service_f420dvd", "template_tpqmflf", {
     name: nom,
     nom_client: nom,
@@ -1218,7 +1218,7 @@ var mailRecap = emailjs.send("service_f420dvd", "template_tpqmflf", {
   message: "Test rapport interne",
   rapport: "Test rapport interne"
 });
-*/
+
 
  emailjs.send("service_f420dvd", "template_tpqmflf", {
   to_email: "ar.t.event@skynet.be",
