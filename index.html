@@ -1342,9 +1342,10 @@ function buildRapportInterne(id) {
     var hv = getV("cli-t-haut");
     var mv = getV("cli-t-mode");
     var fv = getV("cli-t-freq");
-    var BASE={"norm-mulching":0.18,"norm-ramassage":0.20,"h10-mulching":0.15,"h10-ramassage":0.25,
-              "h20-mulching":0.22,"h20-ramassage":0.30,"h40-mulching":0.32,"h40-ramassage":0.40,
-              "h60-mulching":0.45,"h60-ramassage":0.53,"h80-mulching":0.55,"h80-ramassage":0.58};
+    var BASE={"norm-mulching":0.08,"norm-ramassage":0.09,"h10-mulching":0.10,"h10-ramassage":0.11,
+"h20-mulching":0.14,"h20-ramassage":0.16,"h40-mulching":0.20,"h40-ramassage":0.24,
+"h60-mulching":0.30,"h60-ramassage":0.35,"h80-mulching":0.40,"h80-ramassage":0.45};
+var modeC=1.0;
     var FREQ={"7-10":1.0,"2sem":1.25,"3sem":1.55,"mensuel":1.90,"abandon":2.40};
     var base=BASE[hv+"-"+mv]||0.18;
     var fc=FREQ[fv]||1.0;
