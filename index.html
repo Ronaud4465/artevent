@@ -746,15 +746,14 @@ function calcTonteCli() {
     return;
   }
 
-  // Grille SXG19 — état terrain × mode (milieu fourchette marché belge)
-  // Mulching: très facile 0.04, facile 0.06, moyen 0.085, difficile 0.16, très difficile 0.16
-  // Ramassage: très facile 0.06, facile 0.085, moyen 0.12, difficile 0.16, très difficile 0.215
+  // Grille SXG19 — état terrain × mode (tarifs corrigés, plus réalistes)
+  // Le ramassage est déjà intégré dans la base: ne PAS ajouter ensuite un coeff ramassage.
   var BASE_SGX = {
-    "tfacile-mulching": 0.056,"tfacile-ramassage": 0.07,
-    "facile-mulching":  0.072,"facile-ramassage":  0.09,
-    "moyen-mulching":   0.096,"moyen-ramassage":   0.12,
-    "difficile-mulching":0.128,"difficile-ramassage":0.16,
-    "tdiff-mulching":   0.18, "tdiff-ramassage":   0.225
+    "tfacile-mulching": 0.090,"tfacile-ramassage": 0.115,
+    "facile-mulching":  0.110,"facile-ramassage":  0.145,
+    "moyen-mulching":   0.135,"moyen-ramassage":   0.180,
+    "difficile-mulching":0.180,"difficile-ramassage":0.240,
+    "tdiff-mulching":   0.240,"tdiff-ramassage":   0.320
   };
 
   // Coefficient hauteur herbe
@@ -764,7 +763,7 @@ function calcTonteCli() {
   var coeff_acces = sgx19 ? 1.0 : 1.40;
 
   // Coefficients fréquence
-  var FREQ = {"7-10":0.85,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
+  var FREQ = {"7-10":0.90,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
 
   var base   = BASE_SGX[ev+"-"+mv] || 0.06;
   var ch     = COEFF_H[hv] || 1.0;
@@ -1344,18 +1343,18 @@ function buildRapportInterne(id) {
     var fv = getV("cli-t-freq");
     var ev = getV("cli-t-etat");
 
-    // Même logique que calcTonteCli(): état terrain × mode, puis hauteur, accès et fréquence.
-    // Le ramassage est déjà inclus dans BASE_SGX : ne PAS rajouter un coefficient x1.30.
-    var BASE_SGX={
-      "tfacile-mulching":0.056,"tfacile-ramassage":0.07,
-      "facile-mulching":0.072,"facile-ramassage":0.09,
-      "moyen-mulching":0.096,"moyen-ramassage":0.12,
-      "difficile-mulching":0.128,"difficile-ramassage":0.16,
-      "tdiff-mulching":0.18,"tdiff-ramassage":0.225
+    // Même logique que l'estimation client calcTonteCli()
+    // Le ramassage est déjà intégré dans BASE_SGX: pas de coefficient x1.30 séparé.
+    var BASE_SGX = {
+      "tfacile-mulching": 0.090,"tfacile-ramassage": 0.115,
+      "facile-mulching":  0.110,"facile-ramassage":  0.145,
+      "moyen-mulching":   0.135,"moyen-ramassage":   0.180,
+      "difficile-mulching":0.180,"difficile-ramassage":0.240,
+      "tdiff-mulching":   0.240,"tdiff-ramassage":   0.320
     };
     var COEFF_H={"norm":1.0,"h10":1.0,"h20":1.30,"h40":1.50,"h60":1.80,"h80":2.20};
-    var FREQ={"7-10":0.85,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
-    var base=BASE_SGX[ev+"-"+mv]||0.06;
+    var FREQ={"7-10":0.90,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
+    var base=BASE_SGX[ev+"-"+mv]||0.110;
     var ch=COEFF_H[hv]||1.0;
     var fc=FREQ[fv]||1.0;
     var coeff_acces=sgx?1.0:1.40;
@@ -1363,15 +1362,17 @@ function buildRapportInterne(id) {
     var cTravail=Math.round(tSurf*prixM2);
     var cDep=Math.round(ckm*km*2);
     var rev=cTravail+cDep;
-    var pv=Math.max(60,Math.round(rev*1.20));
+    var pv=Math.max(sgx?60:40,Math.round(rev*1.20));
+    var estLo=Math.max(sgx?60:40,Math.round(pv*0.95));
+    var estHi=Math.round(pv*1.05);
     r += "Surface         : "+tSurf+" m2\n";
     r += "Machine         : "+machine+"\n";
-    r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
     r += "Etat terrain    : "+getSel("cli-t-etat")+"\n";
+    r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
     r += "Mode            : "+getSel("cli-t-mode")+"\n";
     r += "Frequence       : "+getSel("cli-t-freq")+"\n";
     r += "\n-- Calcul --\n";
-    r += "Base €/m2       : "+base.toFixed(3)+"e\n";
+    r += "Base €/m2       : "+base.toFixed(3)+"e (etat + mode)\n";
     r += "Coeff hauteur   : x"+ch+"\n";
     r += "Coeff frequence : x"+fc+"\n";
     r += "Coeff acces     : x"+coeff_acces+"\n";
@@ -1380,6 +1381,7 @@ function buildRapportInterne(id) {
     r += "Deplacement     : "+km+"km x2 x "+ckm+"e/km = "+cDep+"e\n";
     r += "REVIENT         : "+rev+"e\n";
     r += "Prix vente +20% : "+pv+"e\n";
+    r += "Estimation calc.: entre "+estLo+"e et "+estHi+"e\n";
     if(cliAvecBordures) {
       var BPRIX={"simple":0.40,"norm":0.60,"haut":0.80,"env":1.00,"clot":1.20};
       var bev=getV("cli-b-etat");
