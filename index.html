@@ -588,13 +588,13 @@ footer{background:#0d1f0d;padding:56px 80px 28px;color:rgba(255,255,255,.6);}
     <div class="cof">
       <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:var(--vert);margin-bottom:22px;">Envoyez-nous un message</h3>
       <div class="fr" style="margin-bottom:0">
-        <div class="fg"><label>Nom complet</label><input type="text" placeholder="Votre nom"></div>
-        <div class="fg"><label>Téléphone</label><input type="tel" placeholder="04XX/XX XX XX"></div>
+        <div class="fg"><label>Nom complet</label><input type="text" id="contact-nom" placeholder="Votre nom"></div>
+        <div class="fg"><label>Téléphone</label><input type="tel" id="contact-tel" placeholder="04XX/XX XX XX"></div>
       </div>
-      <div class="fg"><label>Email</label><input type="email" placeholder="votre@email.be"></div>
-      <div class="fg"><label>Sujet</label><select><option>Demande de devis</option><option>Renseignements</option><option>Contrat d'entretien</option><option>Marché public</option><option>Autre</option></select></div>
-      <div class="fg"><label>Message</label><textarea rows="4" placeholder="Décrivez votre projet ou votre demande..."></textarea></div>
-      <button class="bf" onclick="this.textContent='✓ Message envoyé !';this.style.background='#2d7a2d';this.disabled=true;">Envoyer le message</button>
+      <div class="fg"><label>Email</label><input type="email" id="contact-email" placeholder="votre@email.be"></div>
+      <div class="fg"><label>Sujet</label><select id="contact-sujet"><option>Demande de devis</option><option>Renseignements</option><option>Contrat d'entretien</option><option>Marché public</option><option>Autre</option></select></div>
+      <div class="fg"><label>Message</label><textarea rows="4" id="contact-msg" placeholder="Décrivez votre projet ou votre demande..."></textarea></div>
+      <button class="bf" onclick="envoyerContact(this)">Envoyer le message</button>
     </div>
   </div>
 </section>
@@ -746,14 +746,15 @@ function calcTonteCli() {
     return;
   }
 
-  // Grille SXG19 — état terrain × mode (tarifs corrigés, plus réalistes)
-  // Le ramassage est déjà intégré dans la base: ne PAS ajouter ensuite un coeff ramassage.
+  // Grille SXG19 — état terrain × mode (milieu fourchette marché belge)
+  // Mulching: très facile 0.04, facile 0.06, moyen 0.085, difficile 0.16, très difficile 0.16
+  // Ramassage: très facile 0.06, facile 0.085, moyen 0.12, difficile 0.16, très difficile 0.215
   var BASE_SGX = {
-    "tfacile-mulching": 0.090,"tfacile-ramassage": 0.115,
-    "facile-mulching":  0.110,"facile-ramassage":  0.145,
-    "moyen-mulching":   0.135,"moyen-ramassage":   0.180,
-    "difficile-mulching":0.180,"difficile-ramassage":0.240,
-    "tdiff-mulching":   0.240,"tdiff-ramassage":   0.320
+    "tfacile-mulching": 0.056,"tfacile-ramassage": 0.07,
+    "facile-mulching":  0.072,"facile-ramassage":  0.09,
+    "moyen-mulching":   0.096,"moyen-ramassage":   0.12,
+    "difficile-mulching":0.128,"difficile-ramassage":0.16,
+    "tdiff-mulching":   0.18, "tdiff-ramassage":   0.225
   };
 
   // Coefficient hauteur herbe
@@ -763,7 +764,7 @@ function calcTonteCli() {
   var coeff_acces = sgx19 ? 1.0 : 1.40;
 
   // Coefficients fréquence
-  var FREQ = {"7-10":0.90,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
+  var FREQ = {"7-10":0.85,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
 
   var base   = BASE_SGX[ev+"-"+mv] || 0.06;
   var ch     = COEFF_H[hv] || 1.0;
@@ -1341,47 +1342,32 @@ function buildRapportInterne(id) {
     var hv = getV("cli-t-haut");
     var mv = getV("cli-t-mode");
     var fv = getV("cli-t-freq");
-    var ev = getV("cli-t-etat");
-
-    // Même logique que l'estimation client calcTonteCli()
-    // Le ramassage est déjà intégré dans BASE_SGX: pas de coefficient x1.30 séparé.
-    var BASE_SGX = {
-      "tfacile-mulching": 0.090,"tfacile-ramassage": 0.115,
-      "facile-mulching":  0.110,"facile-ramassage":  0.145,
-      "moyen-mulching":   0.135,"moyen-ramassage":   0.180,
-      "difficile-mulching":0.180,"difficile-ramassage":0.240,
-      "tdiff-mulching":   0.240,"tdiff-ramassage":   0.320
-    };
-    var COEFF_H={"norm":1.0,"h10":1.0,"h20":1.30,"h40":1.50,"h60":1.80,"h80":2.20};
-    var FREQ={"7-10":0.90,"2sem":1.0,"3sem":1.20,"mensuel":1.40,"abandon":1.65};
-    var base=BASE_SGX[ev+"-"+mv]||0.110;
-    var ch=COEFF_H[hv]||1.0;
+    var BASE={"norm-mulching":0.18,"norm-ramassage":0.20,"h10-mulching":0.15,"h10-ramassage":0.25,
+              "h20-mulching":0.22,"h20-ramassage":0.30,"h40-mulching":0.32,"h40-ramassage":0.40,
+              "h60-mulching":0.45,"h60-ramassage":0.53,"h80-mulching":0.55,"h80-ramassage":0.58};
+    var FREQ={"7-10":1.0,"2sem":1.25,"3sem":1.55,"mensuel":1.90,"abandon":2.40};
+    var base=BASE[hv+"-"+mv]||0.18;
     var fc=FREQ[fv]||1.0;
-    var coeff_acces=sgx?1.0:1.40;
-    var prixM2=base*ch*coeff_acces*fc;
+    var modeC=mv==="ramassage"?1.30:1.0;
+    var prixM2=base*fc*modeC;
     var cTravail=Math.round(tSurf*prixM2);
     var cDep=Math.round(ckm*km*2);
     var rev=cTravail+cDep;
-    var pv=Math.max(sgx?60:40,Math.round(rev*1.20));
-    var estLo=Math.max(sgx?60:40,Math.round(pv*0.95));
-    var estHi=Math.round(pv*1.05);
+    var pv=Math.max(80,Math.round(rev*1.20));
     r += "Surface         : "+tSurf+" m2\n";
     r += "Machine         : "+machine+"\n";
-    r += "Etat terrain    : "+getSel("cli-t-etat")+"\n";
     r += "Hauteur herbe   : "+getSel("cli-t-haut")+"\n";
     r += "Mode            : "+getSel("cli-t-mode")+"\n";
     r += "Frequence       : "+getSel("cli-t-freq")+"\n";
     r += "\n-- Calcul --\n";
-    r += "Base €/m2       : "+base.toFixed(3)+"e (etat + mode)\n";
-    r += "Coeff hauteur   : x"+ch+"\n";
+    r += "Base €/m2       : "+base.toFixed(2)+"e\n";
     r += "Coeff frequence : x"+fc+"\n";
-    r += "Coeff acces     : x"+coeff_acces+"\n";
+    r += "Coeff mode      : x"+modeC+"\n";
     r += "Prix final/m2   : "+prixM2.toFixed(3)+"e\n";
     r += "Cout travail    : "+tSurf+"m2 x "+prixM2.toFixed(3)+" = "+cTravail+"e\n";
     r += "Deplacement     : "+km+"km x2 x "+ckm+"e/km = "+cDep+"e\n";
     r += "REVIENT         : "+rev+"e\n";
     r += "Prix vente +20% : "+pv+"e\n";
-    r += "Estimation calc.: entre "+estLo+"e et "+estHi+"e\n";
     if(cliAvecBordures) {
       var BPRIX={"simple":0.40,"norm":0.60,"haut":0.80,"env":1.00,"clot":1.20};
       var bev=getV("cli-b-etat");
@@ -1647,6 +1633,44 @@ function sendRapportInterne(id) {
 // ============================================================
 
 
+
+function envoyerContact(btn) {
+  var nom  = document.getElementById("contact-nom") ? document.getElementById("contact-nom").value : "";
+  var tel  = document.getElementById("contact-tel") ? document.getElementById("contact-tel").value : "";
+  var email= document.getElementById("contact-email") ? document.getElementById("contact-email").value : "";
+  var sujet= document.getElementById("contact-sujet") ? document.getElementById("contact-sujet").value : "";
+  var msg  = document.getElementById("contact-msg") ? document.getElementById("contact-msg").value : "";
+
+  if(!nom || !msg) { alert("Merci de remplir au minimum votre nom et votre message."); return; }
+
+  btn.textContent = "Envoi en cours...";
+  btn.disabled = true;
+
+  fetch("https://formspree.io/f/mlgzkogk", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      _subject: "Contact ArtEvent — " + (sujet||"Message"),
+      nom: nom,
+      telephone: tel,
+      email: email,
+      sujet: sujet,
+      message: msg
+    })
+  }).then(function(r) {
+    if(r.ok) {
+      btn.textContent = "✓ Message envoyé !";
+      btn.style.background = "#2d7a2d";
+      btn.style.color = "#fff";
+    } else {
+      btn.textContent = "Erreur — réessayez";
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = "Erreur réseau";
+    btn.disabled = false;
+  });
+}
 </script>
 </body>
 </html>
